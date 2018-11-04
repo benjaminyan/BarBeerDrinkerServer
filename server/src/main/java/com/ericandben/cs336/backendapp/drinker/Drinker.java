@@ -40,8 +40,6 @@ public class Drinker {
     @ManyToMany(mappedBy = "drinkers")
     private Set<Bar> barsFrequented;
 
-
-
     public String getName() {
         return this.name;
     }
@@ -98,8 +96,20 @@ public class Drinker {
         this.transactions = transactions;
     }
     
+    public Set<Item> getItemsLiked() {
+        return this.itemsLiked;
+    }
 
+    public void setItemsLiked(Set<Item> itemsLiked) {
+        this.itemsLiked = itemsLiked;
+    }
 
+    public Set<Bar> getBarsFrequented() {
+        return this.barsFrequented;
+    }
 
+    public void setBarsFrequented(Set<Bar> barsFrequented) {
+        this.barsFrequented = barsFrequented;
+    }
 
 }

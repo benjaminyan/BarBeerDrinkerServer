@@ -1,6 +1,7 @@
 package com.ericandben.cs336.backendapp.bar;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.ericandben.cs336.backendapp.drinker.*;
+import com.ericandben.cs336.backendapp.sells.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -38,10 +39,8 @@ public class Bar {
                inverseJoinColumns = {@JoinColumn(name = "drinker")})
     private Set<Drinker> drinkers;
 
-    
-
-
-
+    @OneToMany(mappedBy = "barObj")
+    private Set<Sells> itemsSold;
 
     public String getName() {
         return this.name;
@@ -115,6 +114,20 @@ public class Bar {
         this.transactions = transactions;
     }
 
+    public Set<Drinker> getDrinkers() {
+        return this.drinkers;
+    }
 
+    public void setDrinkers(Set<Drinker> drinkers) {
+        this.drinkers = drinkers;
+    }
+
+    public Set<Sells> getItemsSold() {
+        return this.itemsSold;
+    }
+
+    public void setItemsSold(Set<Sells> itemsSold) {
+        this.itemsSold = itemsSold;
+    }
 
 }

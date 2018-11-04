@@ -1,11 +1,9 @@
 package com.ericandben.cs336.backendapp.transaction;
 
 import java.util.Date;
-
-import javax.persistence.Embeddable;
+import com.ericandben.cs336.backendapp.drinker.*;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
@@ -17,7 +15,7 @@ public class Transaction {
     @EmbeddedId
     private TransactionKey pkey;
 
-    private String drinker;
+    private Drinker drinker;
 
     private double amountPaid;
     private double tip;
@@ -35,11 +33,11 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "drinker") // name of column (in Transactions table) that is foreign key into Drinkers table
-    public String getDrinker() {
+    public Drinker getDrinker() {
         return this.drinker;
     }
 
-    public void setDrinker(String drinker) {
+    public void setDrinker(Drinker drinker) {
         this.drinker = drinker;
     }
 

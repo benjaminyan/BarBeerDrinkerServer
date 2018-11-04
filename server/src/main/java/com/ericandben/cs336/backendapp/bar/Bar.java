@@ -1,12 +1,14 @@
 package com.ericandben.cs336.backendapp.bar;
 import com.ericandben.cs336.backendapp.transaction.*;
-
+import com.ericandben.cs336.backendapp.drinker.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.OneToMany;
 import java.util.Set;
-
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 @Entity
 @Table(name = "Bars")
 public class Bar {
@@ -29,6 +31,12 @@ public class Bar {
 
     @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
     private Set<Transaction> transactions;
+
+    @ManyToMany
+    @JoinTable(name = "Frequents",
+               joinColumns = {@JoinColumn(name = "bar")},
+               inverseJoinColumns = {@JoinColumn(name = "drinker")})
+    private Set<Drinker> drinkers;
 
     
 

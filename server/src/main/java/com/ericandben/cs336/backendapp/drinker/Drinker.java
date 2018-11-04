@@ -2,7 +2,11 @@ package com.ericandben.cs336.backendapp.drinker;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.Set;
+
+import com.ericandben.cs336.backendapp.transaction.*;
 
 @Entity
 @Table(name = "Drinkers")
@@ -19,6 +23,13 @@ public class Drinker {
     private String addr;
 
     private String phone;
+
+    @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
+    private Set<Transaction> transactions;
+
+    
+
+
 
     public String getName() {
         return this.name;
@@ -68,6 +79,13 @@ public class Drinker {
         this.phone = phone;
     }
 
+    public Set<Transaction> getTransactions() {
+        return this.transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
+    }
     
 
 

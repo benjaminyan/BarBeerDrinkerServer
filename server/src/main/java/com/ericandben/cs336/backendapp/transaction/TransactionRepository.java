@@ -1,9 +1,9 @@
-package com.ericandben.cs336.backendapp.drinker;
+package com.ericandben.cs336.backendapp.transaction;
 
 import org.springframework.data.repository.CrudRepository;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface DrinkerRepository extends CrudRepository<Drinker, Integer> {
+public interface TransactionRepository extends CrudRepository<Transaction, Integer> {
 
 }

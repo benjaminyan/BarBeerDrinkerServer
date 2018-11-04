@@ -30,7 +30,8 @@ public class Bar {
 
     private double tax;
 
-    @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
+    // This maps the bar to its transactions
+    @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Transaction class
     private Set<Transaction> transactions;
 
     @ManyToMany
@@ -39,7 +40,8 @@ public class Bar {
                inverseJoinColumns = {@JoinColumn(name = "drinker")})
     private Set<Drinker> drinkers;
 
-    @OneToMany(mappedBy = "barObj")
+    // This map the bar to the items it sells
+    @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Sells class
     private Set<Sells> itemsSold;
 
     public String getName() {
@@ -129,5 +131,6 @@ public class Bar {
     public void setItemsSold(Set<Sells> itemsSold) {
         this.itemsSold = itemsSold;
     }
+
 
 }

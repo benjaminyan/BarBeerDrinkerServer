@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 // CRUD refers Create, Read, Update, Delete
 
 public interface ItemRepository extends CrudRepository<Item, Integer> {
-
+    public Item findByName(String name);
 }

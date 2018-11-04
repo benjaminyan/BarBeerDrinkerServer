@@ -28,6 +28,7 @@ public class Drinker {
 
     private String phone;
 
+    // This maps the drinker to their transactions
     @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
     private Set<Transaction> transactions;
 

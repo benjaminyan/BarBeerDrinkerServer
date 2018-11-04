@@ -20,7 +20,7 @@ public class Item {
     private Set<Drinker> likers;
 
 
-    @OneToMany(mappedBy = "itemObj")
+    @OneToMany(mappedBy = "pkey.item") // TODO why does this work?
     private Set<Sells> barsSellingThis;
 
     public String getName() {

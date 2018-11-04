@@ -15,6 +15,8 @@ public class Transaction {
     @EmbeddedId
     private TransactionKey pkey;
 
+    @ManyToOne
+    @JoinColumn(name = "drinker") // name of column (in Transactions table) that is foreign key into Drinkers table
     private Drinker drinker;
 
     private double amountPaid;
@@ -31,8 +33,6 @@ public class Transaction {
         this.pkey = pkey;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "drinker") // name of column (in Transactions table) that is foreign key into Drinkers table
     public Drinker getDrinker() {
         return this.drinker;
     }

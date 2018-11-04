@@ -1,4 +1,5 @@
 package com.ericandben.cs336.backendapp.transaction;
+import com.ericandben.cs336.backendapp.bar.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,27 +14,29 @@ public class TransactionKey implements Serializable {
 
     private static final long serialVersionUID = 4L;
 
+    @Column(name = "tid")
     private int tid;
 
-    private String bar;
+    @ManyToOne
+    @JoinColumn(name = "bar") // name of column (in Transactions table) that is foreign key into Bars table
+    private Bar bar; // TODO should this be a string?
 
    
     public int getTid() {
         return this.tid;
     }
 
-    @Column(name = "tid")
+    
     public void setTid(int tid) {
         this.tid = tid;
     }
 
-    public String getBar() {
+    public Bar getBar() {
         return this.bar;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "bar") // name of column (in Transactions table) that is foreign key into Bars table
-    public void setBar(String bar) {
+    
+    public void setBar(Bar bar) {
         this.bar = bar;
     }
 
@@ -48,7 +51,7 @@ public class TransactionKey implements Serializable {
  
     @Override
     public int hashCode() {
-        return Objects.hash(getTid(), getBar());
+        return Objects.hash(getTid(), getBar()); // TODO should we use the names instead?
     }
 
 

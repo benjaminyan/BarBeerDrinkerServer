@@ -30,4 +30,10 @@ public class ItemController {
 		// This returns a JSON or XML with the users
 		return itemRepository.findAll();
 	}
+
+	@GetMapping(path="/find")
+	public @ResponseBody Item getByName(@RequestParam String name) {
+
+		return itemRepository.findByName(name);
+	}
 }

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Foods")
+@Table(name = "SoftDrinks")
 public class SoftDrink extends Item {
     @Id
     private String name;

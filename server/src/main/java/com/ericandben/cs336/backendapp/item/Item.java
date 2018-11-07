@@ -2,8 +2,12 @@ package com.ericandben.cs336.backendapp.item;
 
 import com.ericandben.cs336.backendapp.drinker.Drinker;
 import com.ericandben.cs336.backendapp.sells.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -11,16 +15,20 @@ import javax.persistence.OneToMany;
 import java.util.Set;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED) // This was important
 @Table(name = "Items")
 public class Item {
     @Id
     private String name;
 
+    // Drinkers who like this item
     @ManyToMany(mappedBy = "itemsLiked")
     private Set<Drinker> likers;
 
 
-    @OneToMany(mappedBy = "pkey.item") // TODO why does this work?
+    // Bars selling this item
+    @JsonIgnore
+    @OneToMany(mappedBy = "pkey.item") // pkey is a property of Sells
     private Set<Sells> barsSellingThis;
 
     public String getName() {
@@ -46,5 +54,6 @@ public class Item {
     public void setBarsSellingThis(Set<Sells> barsSellingThis) {
         this.barsSellingThis = barsSellingThis;
     }
+    
     
 }

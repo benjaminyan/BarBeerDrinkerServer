@@ -11,6 +11,7 @@ import javax.persistence.JoinTable;
 import java.util.Set;
 
 import com.ericandben.cs336.backendapp.transaction.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Drinkers")
@@ -29,9 +30,11 @@ public class Drinker {
     private String phone;
 
     // This maps the drinker to their transactions
+    @JsonIgnore
     @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
     private Set<Transaction> transactions;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "Likes",
                joinColumns={@JoinColumn(name = "drinker")},

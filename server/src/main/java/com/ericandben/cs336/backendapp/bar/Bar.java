@@ -1,5 +1,6 @@
 package com.ericandben.cs336.backendapp.bar;
 import com.ericandben.cs336.backendapp.transaction.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ericandben.cs336.backendapp.drinker.*;
 import com.ericandben.cs336.backendapp.sells.*;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import java.util.Set;
 import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+
 @Entity
 @Table(name = "Bars")
 public class Bar {
@@ -31,9 +33,11 @@ public class Bar {
     private double tax;
 
     // This maps the bar to its transactions
+    @JsonIgnore
     @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Transaction class
     private Set<Transaction> transactions;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "Frequents",
                joinColumns = {@JoinColumn(name = "bar")},
@@ -41,6 +45,7 @@ public class Bar {
     private Set<Drinker> drinkers;
 
     // This map the bar to the items it sells
+    @JsonIgnore
     @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Sells class
     private Set<Sells> itemsSold;
 

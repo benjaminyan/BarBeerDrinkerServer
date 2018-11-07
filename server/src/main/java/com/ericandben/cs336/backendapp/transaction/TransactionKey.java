@@ -54,5 +54,9 @@ public class TransactionKey implements Serializable {
         return Objects.hash(getTid(), getBar()); // TODO should we use the names instead?
     }
 
+    public String toString() {
+        return "TransactionKey [tid = " + this.tid + ", bar = " + this.getBar().getName() + "]"; 
+    }
+
 
 }

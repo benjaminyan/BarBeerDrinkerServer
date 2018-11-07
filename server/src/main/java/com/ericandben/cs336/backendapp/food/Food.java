@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "Foods")
 public class Food extends Item {
@@ -17,5 +19,11 @@ public class Food extends Item {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.name);
+    }
+
     
 }

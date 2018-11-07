@@ -60,7 +60,7 @@ public class IncludesKey implements Serializable {
  
     @Override
     public int hashCode() {
-        return Objects.hash(getTransactionKey(), getItem()); // TODO should we use the names instead?
+        return Objects.hash(getTransactionKey(), getItem().getName()); // TODO should we use the names instead?
     }
 
     public String toString() {

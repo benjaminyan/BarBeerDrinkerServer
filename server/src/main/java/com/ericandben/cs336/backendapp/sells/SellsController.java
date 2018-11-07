@@ -43,7 +43,7 @@ public class SellsController {
 		// persist the object
 
 		bar.getItemsSold().add(n);
-		item.getBarsSellingThis().add(n);
+		//item.getBarsSellingThis().add(n);
 
 		sellsRepository.save(n);
 		return "Saved";

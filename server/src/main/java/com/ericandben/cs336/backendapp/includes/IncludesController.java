@@ -1,6 +1,8 @@
 package com.ericandben.cs336.backendapp.includes;
 
 import com.ericandben.cs336.backendapp.item.*;
+import com.ericandben.cs336.backendapp.softdrink.*;
+import com.ericandben.cs336.backendapp.food.*;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.ericandben.cs336.backendapp.bar.*;
 import com.ericandben.cs336.backendapp.drinker.*;
@@ -41,29 +43,30 @@ public class IncludesController {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
-		Includes n = new Includes();
-		IncludesKey iKey = new IncludesKey();
 
-		TransactionKey key = new TransactionKey();
-		key.setBar(barRepository.findByName(barName));
-		key.setTid(tid);
+		Item testItem = new Item(); // if this is a SoftDrink it doesn't work
+		testItem.setName(itemName);
+		//Item testItem = itemRepository.findByName(itemName);
+		Bar testBar = new Bar();
+		testBar.setName(barName);
 
-		iKey.setTransactionKey(key);
-		iKey.setItem(itemRepository.findByName(itemName));
-		n.setPkey(iKey);
-		n.setQuantity(quantity);
+		TransactionKey testTK = new TransactionKey();
+		testTK.setBar(testBar);
+		testTK.setTid(tid);
 
-		logger.warn("INCLUDES REPOSITORY:");
-		logger.warn(includesRepository.toString());
-		logger.warn("" + n.getPkey().hashCode());
-		logger.warn("" + key.hashCode());
-		logger.warn("GOT PAST IT");
-
-		logger.warn("INCLUDES OBJECT:");
-		logger.warn(n.toString());
-
-		includesRepository.save(n);
+		IncludesKey testIK = new IncludesKey();
+		testIK.setTransactionKey(testTK);
+		testIK.setItem(testItem);
+		Includes testIncludes = new Includes();
+		testIncludes.setPkey(testIK);
+		testIncludes.setQuantity(quantity);
+		includesRepository.save(testIncludes);
 		return "Saved";
+	}
+
+	@GetMapping(path="/item")
+	public @ResponseBody Item getItem(@RequestParam String itemName) {
+		return itemRepository.findByName(itemName);
 	}
 
 	@GetMapping(path="/all")

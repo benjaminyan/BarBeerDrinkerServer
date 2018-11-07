@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import java.util.Set;
+import java.util.Objects;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // This was important
@@ -22,14 +23,14 @@ public class Item {
     private String name;
 
     // Drinkers who like this item
-    @ManyToMany(mappedBy = "itemsLiked")
-    private Set<Drinker> likers;
+    //@ManyToMany(mappedBy = "itemsLiked")
+    //private Set<Drinker> likers;
 
 
     // Bars selling this item
-    @JsonIgnore
-    @OneToMany(mappedBy = "pkey.item") // pkey is a property of Sells
-    private Set<Sells> barsSellingThis;
+    //@JsonIgnore
+    //@OneToMany(mappedBy = "pkey.item") // pkey is a property of Sells
+    //private Set<Sells> barsSellingThis;
 
     public String getName() {
         return this.name;
@@ -39,6 +40,7 @@ public class Item {
         this.name = name;
     }
 
+    /*
     public Set<Drinker> getLikers() {
         return this.likers;
     }
@@ -53,6 +55,12 @@ public class Item {
 
     public void setBarsSellingThis(Set<Sells> barsSellingThis) {
         this.barsSellingThis = barsSellingThis;
+    }
+    */
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.name);
     }
     
     

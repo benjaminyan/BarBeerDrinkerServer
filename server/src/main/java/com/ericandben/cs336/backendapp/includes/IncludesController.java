@@ -44,7 +44,7 @@ public class IncludesController {
 		// @RequestParam means it is a parameter from the GET or POST request
 
 
-		Item testItem = new Item(); // if this is a SoftDrink it doesn't work
+		Item testItem = new Food(); // if this is a SoftDrink it doesn't work
 		testItem.setName(itemName);
 		//Item testItem = itemRepository.findByName(itemName);
 		Bar testBar = new Bar();

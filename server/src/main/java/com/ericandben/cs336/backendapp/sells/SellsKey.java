@@ -51,7 +51,7 @@ public class SellsKey implements Serializable {
  
     @Override
     public int hashCode() {
-        return Objects.hash(getBar(), getItem()); // TODO should we use the names instead?
+        return Objects.hash(getBar().getLicense(), getItem().getName()); // TODO should we use the names instead?
     }
 
 

@@ -42,7 +42,7 @@ public class SellsController {
 		// set appropriate properties of Sells object
 		// persist the object
 
-		bar.getItemsSold().add(n);
+		//bar.getItemsSold().add(n);
 		//item.getBarsSellingThis().add(n);
 
 		sellsRepository.save(n);

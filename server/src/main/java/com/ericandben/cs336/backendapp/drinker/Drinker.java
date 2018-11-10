@@ -41,6 +41,7 @@ public class Drinker {
                inverseJoinColumns = {@JoinColumn(name = "item")})
     private Set<Item> itemsLiked;
     
+    @JsonIgnore
     @ManyToMany(mappedBy = "drinkers")
     private Set<Bar> barsFrequented;
 

@@ -29,6 +29,21 @@ public class Drinker {
 
     private String phone;
 
+    public Drinker() { }
+
+    public Drinker(String name) {
+        this.name = name;
+    }
+
+    public Drinker(String name, String city, String zip, String state, String addr, String phone) {
+        this.name = name;
+        this.city = city;
+        this.zip = zip;
+        this.state = state;
+        this.addr = addr;
+        this.phone = phone;
+    }
+
     // This maps the drinker to their transactions
     @JsonIgnore
     @OneToMany(mappedBy = "drinker") // name of the property in Transaction class

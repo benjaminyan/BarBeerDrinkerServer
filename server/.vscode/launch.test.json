@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "server",
+                "projectName": "server",
+                "workingDirectory": "/Users/ericg/Documents/2018-2019 Fall/CS 336/Project Stuff/Project Code/Spring/BarBeerDrinkerServer/server",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "server",
+                "projectName": "server",
+                "workingDirectory": "/Users/ericg/Documents/2018-2019 Fall/CS 336/Project Stuff/Project Code/Spring/BarBeerDrinkerServer/server",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

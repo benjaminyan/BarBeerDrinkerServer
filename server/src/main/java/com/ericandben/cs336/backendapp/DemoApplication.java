@@ -2,6 +2,7 @@ package com.ericandben.cs336.backendapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import java.util.Arrays;
 
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 // See https://stackoverflow.com/questions/8367312/serializing-with-jackson-json-getting-no-serializer-found
 
 @SpringBootApplication
-public class DemoApplication {
+public class DemoApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);

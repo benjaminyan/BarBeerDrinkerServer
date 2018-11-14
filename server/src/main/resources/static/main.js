@@ -353,6 +353,10 @@ var routes = [
     { path: 'bars/:name/addtransaction', component: _baraddtransaction_baraddtransaction_component__WEBPACK_IMPORTED_MODULE_10__["BarAddTransactionComponent"] },
     { path: 'drinkers/:name', component: _drinker_drinker_component__WEBPACK_IMPORTED_MODULE_5__["DrinkerComponent"] },
     { path: 'sql', component: _sqlquery_sqlquery_component__WEBPACK_IMPORTED_MODULE_6__["SQLQueryComponent"] },
+    { path: '#',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
     { path: '',
         redirectTo: 'home',
         pathMatch: 'full'
@@ -392,7 +396,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"#\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
 
 /***/ }),
 
@@ -903,7 +907,7 @@ __webpack_require__.r(__webpack_exports__);
 var Settings = /** @class */ (function () {
     function Settings() {
     }
-    Settings.baseUrl = 'http:ec2-18-216-70-104.us-east-2.compute.amazonaws.com:8080/';
+    Settings.baseUrl = 'http:localhost:8080/';
     return Settings;
 }());
 

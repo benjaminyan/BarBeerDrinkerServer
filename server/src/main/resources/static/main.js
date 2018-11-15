@@ -907,7 +907,7 @@ __webpack_require__.r(__webpack_exports__);
 var Settings = /** @class */ (function () {
     function Settings() {
     }
-    Settings.baseUrl = 'http:localhost:8080/';
+    Settings.baseUrl = 'http://ec2-18-216-70-104.us-east-2.compute.amazonaws.com:8080/';
     return Settings;
 }());
 

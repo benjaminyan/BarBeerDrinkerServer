@@ -32,6 +32,11 @@ public class Bar {
 
     private double tax;
 
+    public Bar() { }
+    public Bar(String name) {
+        this.name = name;
+    }
+
     // This maps the bar to its transactions
     @JsonIgnore
     @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Transaction class

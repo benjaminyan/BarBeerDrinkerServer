@@ -25,8 +25,7 @@ public class HourController {
 		// @RequestParam means it is a parameter from the GET or POST request
 
 		Hour n = new Hour();
-		Bar testBar = new Bar();
-		testBar.setName(barName);
+		Bar testBar = new Bar(barName);
         HourKey testHK = new HourKey();
         testHK.setBar(testBar);
         testHK.setWeekday(weekday);

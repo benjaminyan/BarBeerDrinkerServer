@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.util.Map;
+import java.util.List;
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/bars") // This means URL's start with /demo (after Application path)
 public class BarController {
@@ -20,8 +23,7 @@ public class BarController {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
-		Bar n = new Bar();
-		n.setName(name);
+		Bar n = new Bar(name);
 		barRepository.save(n);
 		return "Saved";
 	}
@@ -32,4 +34,12 @@ public class BarController {
 		// This returns a JSON or XML with the users
 		return barRepository.findAll();
 	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topdrinkersperbar")
+	public @ResponseBody List topdrinkersperbar(@RequestParam String bar) {
+		// This returns a JSON or XML with the users
+		return barRepository.drinkerSpentTotal(bar);
+	}
+
 }

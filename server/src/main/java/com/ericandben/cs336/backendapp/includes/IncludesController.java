@@ -47,8 +47,7 @@ public class IncludesController {
 		Item testItem = new Food(); // if this is a SoftDrink it doesn't work
 		testItem.setName(itemName);
 		//Item testItem = itemRepository.findByName(itemName);
-		Bar testBar = new Bar();
-		testBar.setName(barName);
+		Bar testBar = new Bar(barName);
 
 		TransactionKey testTK = new TransactionKey();
 		testTK.setBar(testBar);

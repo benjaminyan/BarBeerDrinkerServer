@@ -22,7 +22,7 @@ import javax.persistence.Column;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IncludesKey implements Serializable {
+public class IncludesKeyAlt implements Serializable {
 
     private static final long serialVersionUID = 4L;
     private static final Logger logger = LoggerFactory.getLogger(IncludesController.class);	
@@ -36,16 +36,26 @@ public class IncludesKey implements Serializable {
     // in the Includes table, the relevant columns are also called "tid" and "bar". If they weren't,
     // we could override the column names specified in TransactionKey.
 
-    private TransactionKey transaction;
+
+    private Long tid; // TODO consider replacing tid and bar with a TransactionKey reference
+    private String bar;
     private String item;
 
 
-    public TransactionKey getTransaction() {
-        return this.transaction;
+    public Long getTid() {
+        return this.tid;
     }
 
-    public void setTransaction(TransactionKey tkey) {
-        this.transaction = tkey;
+    public void setTid(Long tid) {
+        this.tid = tid;
+    }
+
+    public String getBar() {
+        return this.bar;
+    }
+
+    public void setBar(String bar) {
+        this.bar = bar;
     }
 
     public String getItem() {
@@ -59,19 +69,20 @@ public class IncludesKey implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof IncludesKey)) return false;
-        IncludesKey that = (IncludesKey) o;
-        return Objects.equals(getTransaction(), that.getTransaction()) &&
+        if (!(o instanceof IncludesKeyAlt)) return false;
+        IncludesKeyAlt that = (IncludesKeyAlt) o;
+        return Objects.equals(getTid(), that.getTid()) &&
+                Objects.equals(getBar(), that.getBar()) &&
                 Objects.equals(getItem(), that.getItem());
     }
  
     @Override
     public int hashCode() {
-        return Objects.hash(getTransaction(), getItem()); // TODO should we use the names instead?
+        return Objects.hash(getTid(), getBar(), getItem()); // TODO should we use the names instead?
     }
 
     public String toString() {
-        return "IncludesKey [transaction = " + getTransaction() + ", item = " + getItem() + "]";
+        return "IncludesKey [tid = " + getTid() + ", bar = " + getBar() + ", item = " + getItem() + "]";
     }
 
 

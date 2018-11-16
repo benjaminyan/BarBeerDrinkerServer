@@ -38,6 +38,7 @@ public class Bar {
     }
 
     // This maps the bar to its transactions
+    /*
     @JsonIgnore
     @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Transaction class
     private Set<Transaction> transactions;
@@ -48,11 +49,14 @@ public class Bar {
                joinColumns = {@JoinColumn(name = "bar")},
                inverseJoinColumns = {@JoinColumn(name = "drinker")})
     private Set<Drinker> drinkers;
+    */
 
     // This map the bar to the items it sells
+    /*
     @JsonIgnore
     @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Sells class
     private Set<Sells> itemsSold;
+    */
 
     public String getName() {
         return this.name;
@@ -118,6 +122,9 @@ public class Bar {
         this.tax = tax;
     }
 
+
+    /*
+
     public Set<Transaction> getTransactions() {
         return this.transactions;
     }
@@ -134,6 +141,9 @@ public class Bar {
         this.drinkers = drinkers;
     }
 
+    */
+
+    /*
     public Set<Sells> getItemsSold() {
         return this.itemsSold;
     }
@@ -141,6 +151,7 @@ public class Bar {
     public void setItemsSold(Set<Sells> itemsSold) {
         this.itemsSold = itemsSold;
     }
+    */
 
 
 }

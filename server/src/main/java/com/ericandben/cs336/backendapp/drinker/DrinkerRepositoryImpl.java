@@ -1,5 +1,7 @@
 package com.ericandben.cs336.backendapp.drinker;
 import com.ericandben.cs336.backendapp.bar.*;
+import com.ericandben.cs336.backendapp.sells.Sells;
+import com.ericandben.cs336.backendapp.likestest.Likes;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,13 +12,12 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Predicate;
-import javax.persistence.Query;
+//import javax.persistence.Query; TODO do we need this too?
 import javax.persistence.criteria.Expression;
-import javax.naming.spi.DirStateFactory.Result;
 import javax.persistence.EntityManager;
 import org.springframework.stereotype.Service;
-import org.springframework.context.annotation.Bean;
-
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -28,15 +29,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 
-class BarAndTotalSpent {
-    String bar;
-    double total;
 
-    public BarAndTotalSpent(String bar, double total) {
-        this.bar = bar;
-        this.total = total;
-    }
-}
 
 @Service
 public class DrinkerRepositoryImpl implements DrinkerRepositoryCustom {
@@ -55,9 +48,38 @@ public class DrinkerRepositoryImpl implements DrinkerRepositoryCustom {
 
 
 
+    public List<Likes> getLikes() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Likes> q = cb.createQuery(Likes.class);
+        Root<Likes> t = q.from(Likes.class);
+        q.select(t);
+
+        TypedQuery<Likes> query = em.createQuery(q);
+
+        List<Likes> results = query.getResultList();
+        return results;
+    }
+
+    public List<Sells> getSells() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Sells> q = cb.createQuery(Sells.class);
+        Root<Sells> t = q.from(Sells.class);
+        q.select(t);
+
+        TypedQuery<Sells> query = em.createQuery(q);
+
+        List<Sells> results = query.getResultList();
+        return results;
+    }
+
+
+
     // TODO look into CriteriaBuilder::createTupleQuery()
 
-    public List<BarAndTotalSpent> barsByTotalSpentWithinTimeInterval(String drinkerName, String dateBeginning, String dateEnd) {
+    public List<BarAndTotalSpent> barsByTotalSpentWithinTimeInterval(String drinkerName, 
+        String dateBeginning, String dateEnd)
+    {
+
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<BarAndTotalSpent> q = cb.createQuery(BarAndTotalSpent.class);
         Root<Transaction> t = q.from(Transaction.class);

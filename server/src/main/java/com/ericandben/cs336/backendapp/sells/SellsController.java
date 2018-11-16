@@ -33,8 +33,13 @@ public class SellsController {
 		Sells n = new Sells();
 		Bar bar = barRepository.findByName(barName);
 		Item item = itemRepository.findByName(itemName);
-		n.getPkey().setItem(item);
-		n.getPkey().setBar(bar);
+		//Item item = new Item();
+		//item.setName("Nachos");
+		
+		//n.getPkey().setItem(item);
+		// n.getPkey().setBar(bar);
+		n.setItem(item);
+		n.setBar(bar);
 		n.setPrice(price);
 		
 		// get bar with name barName

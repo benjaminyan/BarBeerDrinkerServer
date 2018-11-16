@@ -10,43 +10,48 @@ import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 
 @Embeddable
-public class TransactionKey implements Serializable {
+public class TransactionKeyOld implements Serializable {
 
     private static final long serialVersionUID = 4L;
 
-    private Long tid;
-    private String bar;
+    @Column(name = "tid")
+    private int tid;
+
+    @ManyToOne
+    @JoinColumn(name = "bar") // name of column (in Transactions table) that is foreign key into Bars table
+    private Bar bar; // TODO should this be a string?
 
    
-    public Long getTid() {
+    public int getTid() {
         return this.tid;
     }
+
     
-    public void setTid(Long tid) {
+    public void setTid(int tid) {
         this.tid = tid;
     }
 
-    public String getBar() {
+    public Bar getBar() {
         return this.bar;
     }
 
     
-    public void setBar(String bar) {
+    public void setBar(Bar bar) {
         this.bar = bar;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TransactionKey)) return false;
-        TransactionKey that = (TransactionKey) o;
+        if (!(o instanceof TransactionKeyOld)) return false;
+        TransactionKeyOld that = (TransactionKeyOld) o;
         return Objects.equals(getTid(), that.getTid()) &&
                 Objects.equals(getBar(), that.getBar());
     }
  
     @Override
     public int hashCode() {
-        return Objects.hash(getTid(), getBar()); // TODO should we use the names instead?
+        return Objects.hash(getTid(), getBar().getName()); // TODO should we use the names instead?
     }
 
     public String toString() {

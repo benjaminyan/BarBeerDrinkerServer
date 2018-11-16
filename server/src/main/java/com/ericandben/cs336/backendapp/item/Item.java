@@ -1,16 +1,10 @@
 package com.ericandben.cs336.backendapp.item;
 
-import com.ericandben.cs336.backendapp.drinker.Drinker;
-import com.ericandben.cs336.backendapp.sells.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 import java.util.Set;
 import java.util.Objects;
@@ -18,7 +12,7 @@ import java.util.Objects;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // This was important
 @Table(name = "Items")
-public class Item {
+public abstract class Item {
     @Id
     private String name;
 
@@ -65,8 +59,11 @@ public class Item {
 
     @Override
     public int hashCode() {
+        if (this.name == null) return 0;
         return Objects.hash(this.name);
     }
+
+    
     
     
 }

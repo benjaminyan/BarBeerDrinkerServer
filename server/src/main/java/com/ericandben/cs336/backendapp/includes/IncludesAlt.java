@@ -24,21 +24,19 @@ import javax.persistence.FetchType;
 @Entity
 @Table(name = "Includes")
 @IdClass(IncludesKey.class)
-public class Includes {
+public class IncludesAlt {
 
     //@EmbeddedId
     //private IncludesKey pkey; // Consists of a Transaction and an Item
 
 
     @Id
-    @ManyToOne(cascade = CascadeType.ALL) // MUST have this or else we will get a compilation error (can't determine type...)
-    // MUST have this, or else the generated SQL will be like "includes.transaction_bar" rather than "includes.bar"
-    @JoinColumns({
-        @JoinColumn(name = "tid", referencedColumnName="tid"),
-        @JoinColumn(name = "bar", referencedColumnName="bar")
-    })
-    private Transaction transaction;
+    private int tid;
 
+    @Id
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "bar") // name of column (in Sells table) that is foreign key into Bars table
+    private Bar bar; // TODO should this be a string?
 
     @Id
     @ManyToOne(fetch = FetchType.EAGER)
@@ -46,6 +44,18 @@ public class Includes {
     private Item item; // TODO should this be a string?
 
     private int quantity;
+
+    @ManyToOne(cascade = CascadeType.ALL) // MUST have this or else we will get a compilation error (can't determine type...)
+    // MUST have this, or else the generated SQL will be like "includes.transaction_bar" rather than "includes.bar"
+    @JoinColumns({
+        @JoinColumn(name = "tid", referencedColumnName="tid", insertable=false, updatable=false),
+        @JoinColumn(name = "bar", referencedColumnName="bar", insertable=false, updatable=false)
+    })
+    private Transaction transaction;
+
+
+
+
 
     /*
     public IncludesKey getPkey() {
@@ -56,23 +66,6 @@ public class Includes {
         this.pkey = pkey;
     }
     */
-
-
-    public Transaction getTransaction() {
-        return this.transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
-    public Item getItem() {
-        return this.item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
 
     public double getQuantity() {
         return this.quantity;

@@ -44,21 +44,27 @@ public class Drinker {
         this.phone = phone;
     }
 
+    /*
     // This maps the drinker to their transactions
     @JsonIgnore
     @OneToMany(mappedBy = "drinker") // name of the property in Transaction class
     private Set<Transaction> transactions;
+    */
 
+    /*
     @JsonIgnore
     @ManyToMany
     @JoinTable(name = "Likes",
                joinColumns={@JoinColumn(name = "drinker")},
                inverseJoinColumns = {@JoinColumn(name = "item")})
     private Set<Item> itemsLiked;
+    */
     
+    /*
     @JsonIgnore
     @ManyToMany(mappedBy = "drinkers")
     private Set<Bar> barsFrequented;
+    */
 
     public String getName() {
         return this.name;
@@ -108,6 +114,7 @@ public class Drinker {
         this.phone = phone;
     }
 
+    /*
     public Set<Transaction> getTransactions() {
         return this.transactions;
     }
@@ -115,7 +122,9 @@ public class Drinker {
     public void setTransactions(Set<Transaction> transactions) {
         this.transactions = transactions;
     }
+    */
     
+    /*
     public Set<Item> getItemsLiked() {
         return this.itemsLiked;
     }
@@ -123,7 +132,9 @@ public class Drinker {
     public void setItemsLiked(Set<Item> itemsLiked) {
         this.itemsLiked = itemsLiked;
     }
+    */
 
+    /*
     public Set<Bar> getBarsFrequented() {
         return this.barsFrequented;
     }
@@ -131,5 +142,6 @@ public class Drinker {
     public void setBarsFrequented(Set<Bar> barsFrequented) {
         this.barsFrequented = barsFrequented;
     }
+    */
 
 }

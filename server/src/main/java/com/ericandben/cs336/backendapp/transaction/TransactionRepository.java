@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 // CRUD refers Create, Read, Update, Delete
 
 public interface TransactionRepository extends CrudRepository<Transaction, TransactionKey> {
-    public List<Transaction> findByPkeyTid(int tid);
+    //public List<Transaction> findByPkeyTid(int tid);
 }

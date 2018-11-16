@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.data.domain.PageRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Optional;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/includes") // This means URL's start with /demo (after Application path)
@@ -38,7 +41,7 @@ public class IncludesController {
 	@Autowired BarRepository barRepository;
 
 	@GetMapping(path="/add") // Map ONLY GET Requests
-	public @ResponseBody String addNewIncludes (@RequestParam String barName, @RequestParam int tid, 
+	public @ResponseBody String addNewIncludes (@RequestParam String barName, @RequestParam Long tid, 
 				@RequestParam String itemName, @RequestParam int quantity) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
@@ -46,19 +49,19 @@ public class IncludesController {
 
 		Item testItem = new Food(); // if this is a SoftDrink it doesn't work
 		testItem.setName(itemName);
+
 		//Item testItem = itemRepository.findByName(itemName);
 		Bar testBar = new Bar(barName);
 
-		TransactionKey testTK = new TransactionKey();
-		testTK.setBar(testBar);
-		testTK.setTid(tid);
+		Transaction testTr = new Transaction();
+		testTr.setTid(tid);
+		testTr.setBar(testBar);
 
-		IncludesKey testIK = new IncludesKey();
-		testIK.setTransactionKey(testTK);
-		testIK.setItem(testItem);
 		Includes testIncludes = new Includes();
-		testIncludes.setPkey(testIK);
+		testIncludes.setTransaction(testTr);
+		testIncludes.setItem(testItem);
 		testIncludes.setQuantity(quantity);
+
 		includesRepository.save(testIncludes);
 		return "Saved";
 	}
@@ -72,6 +75,32 @@ public class IncludesController {
 	public @ResponseBody Iterable<Includes> getAllTuples() {
 		// This returns a JSON or XML with the users
 		return includesRepository.findAll();
+	}
+
+	@GetMapping(path="/one")
+	public @ResponseBody Optional<Includes> getOne() {
+	
+		TransactionKey tKey = new TransactionKey();
+		tKey.setBar("2 Birds 1 Stone");
+		tKey.setTid(123L);
+
+		IncludesKey iKey = new IncludesKey();
+		iKey.setTransaction(tKey);
+		iKey.setItem("Pepsi");
+
+		return includesRepository.findById(iKey);
+	}
+
+	@GetMapping(path="/bytid")
+	public @ResponseBody Iterable<Includes> getByTid() {
+		// This returns a JSON or XML with the users
+		return includesRepository.getTuplesByTid(PageRequest.of(0,5));
+	}
+
+	@GetMapping(path="/transactions")
+	public @ResponseBody Iterable<Transaction> getTransactions() {
+		// This returns a JSON or XML with the users
+		return includesRepository.getTransactions(PageRequest.of(0,5));
 	}
 
 }

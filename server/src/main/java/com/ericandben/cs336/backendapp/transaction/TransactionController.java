@@ -33,12 +33,10 @@ public class TransactionController {
 		// @RequestParam means it is a parameter from the GET or POST request
 
         Transaction n = new Transaction();
-        TransactionKey key = new TransactionKey();
-        n.setPkey(key);
 
 		Bar bar = barRepository.findByName(barName);
-        key.setBar(bar);
-        key.setTid(10000);
+        n.setBar(bar);
+        n.setTid(10000L);
 
         Drinker d = drinkerRepository.findByName("Aaron Endo");
         n.setDrinker(d);
@@ -55,6 +53,6 @@ public class TransactionController {
     
     @GetMapping(path="/find")
     public @ResponseBody Iterable<Transaction> findByTid(@RequestParam int tid) {
-        return transactionRepository.findByPkeyTid(tid);
+        return null;
     }
 }

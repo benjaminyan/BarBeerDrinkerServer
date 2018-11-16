@@ -1,5 +1,8 @@
 package com.ericandben.cs336.backendapp.drinker;
 import com.ericandben.cs336.backendapp.transaction.*;
+import com.ericandben.cs336.backendapp.includes.*;
+import com.ericandben.cs336.backendapp.sells.Sells;
+import com.ericandben.cs336.backendapp.likestest.Likes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/drinkers") // This means URL's start with /demo (after Application path)
@@ -33,15 +38,33 @@ public class DrinkerController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<Drinker> getAllDrinkers() {
-		// This returns a JSON or XML with the users
 		return drinkerRepository.findAll();
 	}
 
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/likestest")
+	public @ResponseBody Iterable<Likes> getAllLikes() {
+		return drinkerRepository.getLikes();
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/sellstest")
+	public @ResponseBody Iterable<Sells> getAllSells() {
+		return drinkerRepository.getSells();
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topbeersperdrinker")
+	public @ResponseBody List<Includes> topBeersPerDrinker(@RequestParam String drinker) {
+		return drinkerRepository.topBeers(drinker);
+	}
+
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/topbarsperdrinker")
-	public @ResponseBody List topBarsPerDrinker(@RequestParam String drinker,
+	public @ResponseBody List<BarAndTotalSpent> topBarsPerDrinker(@RequestParam String drinker,
 												@RequestParam String begin, @RequestParam String end) {
-		// This returns a JSON or XML with the users
 		return drinkerRepository.barsByTotalSpentWithinTimeInterval(drinker, begin, end);
 	}
 }

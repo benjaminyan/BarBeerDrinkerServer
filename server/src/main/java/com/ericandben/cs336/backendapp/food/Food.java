@@ -24,6 +24,7 @@ public class Food extends Item {
 
     @Override
     public int hashCode() {
+        if (this.name == null) return 0;
         return Objects.hash(this.name);
     }
 

@@ -1,23 +1,26 @@
 package com.ericandben.cs336.backendapp.sells;
-//import com.ericandben.cs336.backendapp.bar.Bar;
-//import com.ericandben.cs336.backendapp.item.Item;
+import com.ericandben.cs336.backendapp.bar.Bar;
+import com.ericandben.cs336.backendapp.item.Item;
 
 import java.io.Serializable;
-//import java.util.Objects;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-//import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.ManyToOne;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.EmbeddedId;
+import javax.persistence.FetchType;
+import javax.persistence.IdClass;
 
 @Entity
+@IdClass(SellsKey.class)
 @Table(name = "Sells")
 public class Sells {
 
-    @EmbeddedId
-    private SellsKey pkey;
+    //@EmbeddedId
+    //private SellsKey pkey;
 
     private double price;
     
@@ -26,38 +29,35 @@ public class Sells {
 
     // private static final long serialVersionUID = 4L;
 
-    /*
     @Id
-    @ManyToOne
-    @JoinColumn(name = "bar")
-    private Bar barObj;
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "bar") // name of column (in Sells table) that is foreign key into Bars table
+    private Bar bar; // TODO should this be a string?
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item")
-    private Item itemObj;
-    */
+    private Item item; // TODO should this be a string?
 
- 
+   
+    public Bar getBar() {
+        return this.bar;
+    }
+    
+    public void setBar(Bar bar) {
+        this.bar = bar;
+    }
+
+    public Item getItem() {
+        return this.item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+
     /*
-    public Bar getBarObj() {
-        return this.barObj;
-    }
-
-    public void setBarObj(Bar barObj) {
-        this.barObj = barObj;
-    }
-
-    public Item getItemObj() {
-        return this.itemObj;
-    }
-
-    public void setItemObj(Item itemObj) {
-        this.itemObj = itemObj;
-    } */
-
-
     public SellsKey getPkey() {
         return this.pkey;
     }
@@ -65,6 +65,7 @@ public class Sells {
     public void setPkey(SellsKey pkey) {
         this.pkey = pkey;
     }
+    */
 
     public double getPrice() {
         return this.price;
@@ -73,7 +74,6 @@ public class Sells {
     public void setPrice(double price) {
         this.price = price;
     }
-
 
     /*
     @Override

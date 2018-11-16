@@ -22,7 +22,8 @@ import javax.persistence.Column;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IncludesKey implements Serializable {
+@Embeddable
+public class IncludesKeyOld implements Serializable {
 
     private static final long serialVersionUID = 4L;
     private static final Logger logger = LoggerFactory.getLogger(IncludesController.class);	
@@ -36,42 +37,51 @@ public class IncludesKey implements Serializable {
     // in the Includes table, the relevant columns are also called "tid" and "bar". If they weren't,
     // we could override the column names specified in TransactionKey.
 
-    private TransactionKey transaction;
-    private String item;
+    @ManyToOne(cascade = CascadeType.ALL) // MUST have this or else we will get a compilation error (can't determine type...)
+    // MUST have this, or else the generated SQL will be like "includes.transaction_bar" rather than "includes.bar"
+    @JoinColumns({
+        @JoinColumn(name = "tid", referencedColumnName="tid"),
+        @JoinColumn(name = "bar", referencedColumnName="bar")
+    })
+    private TransactionOld transaction;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "item")
+    private Item item; // TODO should this be a string?
 
-    public TransactionKey getTransaction() {
+   
+    public TransactionOld getTransaction() {
         return this.transaction;
     }
-
-    public void setTransaction(TransactionKey tkey) {
-        this.transaction = tkey;
+    
+    public void setTransaction(TransactionOld transaction) {
+        this.transaction = transaction;
     }
 
-    public String getItem() {
+    public Item getItem() {
         return this.item;
     }
 
-    public void setItem(String item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof IncludesKey)) return false;
-        IncludesKey that = (IncludesKey) o;
+        if (!(o instanceof IncludesKeyOld)) return false;
+        IncludesKeyOld that = (IncludesKeyOld) o;
         return Objects.equals(getTransaction(), that.getTransaction()) &&
                 Objects.equals(getItem(), that.getItem());
     }
  
     @Override
     public int hashCode() {
-        return Objects.hash(getTransaction(), getItem()); // TODO should we use the names instead?
+        return Objects.hash(getTransaction().getPkey().hashCode(), getItem().getName()); // TODO should we use the names instead?
     }
 
     public String toString() {
-        return "IncludesKey [transaction = " + getTransaction() + ", item = " + getItem() + "]";
+        return "IncludesKey [transaction = " + this.transaction.toString() + ", item = " + this.item.getName() + "]";
     }
 
 

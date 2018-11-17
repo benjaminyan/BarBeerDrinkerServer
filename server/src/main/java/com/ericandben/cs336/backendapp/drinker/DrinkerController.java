@@ -1,8 +1,8 @@
 package com.ericandben.cs336.backendapp.drinker;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.ericandben.cs336.backendapp.includes.*;
-import com.ericandben.cs336.backendapp.sells.Sells;
-import com.ericandben.cs336.backendapp.likestest.Likes;
+import com.ericandben.cs336.backendapp.sells.*;
+import com.ericandben.cs336.backendapp.likes.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

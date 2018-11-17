@@ -1,9 +1,8 @@
 package com.ericandben.cs336.backendapp.beer;
 
 import org.springframework.data.repository.CrudRepository;
-// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
-// CRUD refers Create, Read, Update, Delete
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface BeerRepository extends CrudRepository<Beer, Integer> {
+public interface BeerRepository extends PagingAndSortingRepository<Beer, String> {
 
 }

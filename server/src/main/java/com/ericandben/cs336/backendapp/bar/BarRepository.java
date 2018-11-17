@@ -9,10 +9,10 @@ import com.ericandben.cs336.backendapp.transaction.Transaction;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
-// CRUD refers Create, Read, Update, Delete
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface BarRepository extends CrudRepository<Bar, Integer>, BarRepositoryCustom  {
+public interface BarRepository extends PagingAndSortingRepository<Bar, Integer>, BarRepositoryCustom  {
+    
     public Bar findByName(String name);
     
 

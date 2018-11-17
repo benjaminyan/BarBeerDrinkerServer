@@ -1,9 +1,9 @@
 package com.ericandben.cs336.backendapp.sells;
 
 import org.springframework.data.repository.CrudRepository;
-// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
-// CRUD refers Create, Read, Update, Delete
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface SellsRepository extends CrudRepository<Sells, Integer> {
+
+public interface SellsRepository extends PagingAndSortingRepository<Sells, SellsKey> {
 
 }

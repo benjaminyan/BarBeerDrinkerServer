@@ -4,7 +4,7 @@ import java.util.Map;
 import com.ericandben.cs336.backendapp.bar.*;
 import com.ericandben.cs336.backendapp.transaction.Transaction;
 import com.ericandben.cs336.backendapp.sells.Sells;
-import com.ericandben.cs336.backendapp.likestest.Likes;
+import com.ericandben.cs336.backendapp.likes.*;
 
 import org.springframework.data.jpa.repository.Query;
 

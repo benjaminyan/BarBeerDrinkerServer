@@ -1,7 +1,7 @@
 package com.ericandben.cs336.backendapp.drinker;
 import com.ericandben.cs336.backendapp.bar.*;
 import com.ericandben.cs336.backendapp.sells.Sells;
-import com.ericandben.cs336.backendapp.likestest.Likes;
+import com.ericandben.cs336.backendapp.likes.*;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

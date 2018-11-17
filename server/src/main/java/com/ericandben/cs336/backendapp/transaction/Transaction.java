@@ -1,5 +1,6 @@
 package com.ericandben.cs336.backendapp.transaction;
 
+import java.sql.Time;
 import java.util.Date;
 import com.ericandben.cs336.backendapp.drinker.*;
 import com.ericandben.cs336.backendapp.bar.Bar;
@@ -10,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
@@ -37,6 +40,8 @@ public class Transaction {
 
     private Date dateTime;
 
+    @Column(name = "t_time")
+    private Time tTime;
 
     public Long getTid() {
         return this.tid;
@@ -87,6 +92,12 @@ public class Transaction {
         this.dateTime = dateTime;
     }
 
+    public Time gettTime() {
+        return this.tTime;
+    }
 
+    public void settTime(Time tTime) {
+        this.tTime = tTime;
+    }
 
 }

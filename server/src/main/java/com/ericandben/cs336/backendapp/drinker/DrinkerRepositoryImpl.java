@@ -94,11 +94,11 @@ public class DrinkerRepositoryImpl implements DrinkerRepositoryCustom {
             
             Expression<Number> sum = cb.sum(t.get("amountPaid"));
             q.multiselect(
-                t.get("pkey").get("bar").get("name"), // Cannot use pkey.bar
+                t.get("bar").get("name"), // Cannot use pkey.bar
                 sum
             );
 
-            q.groupBy(t.get("pkey").get("bar").get("name"));
+            q.groupBy(t.get("bar").get("name"));
             q.orderBy(cb.desc(sum));
 
             //TypedQuery<Transaction> query = em.createQuery(q);

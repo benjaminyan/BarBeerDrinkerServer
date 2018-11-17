@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 @Controller    // This means that this class is a Controller
@@ -40,6 +45,37 @@ public class BarController {
 	public @ResponseBody List topdrinkersperbar(@RequestParam String bar) {
 		// This returns a JSON or XML with the users
 		return barRepository.drinkerSpentTotal(bar);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/timedistsales")
+	public @ResponseBody Map<String,Double> timeDistSales(@RequestParam String bar, @RequestParam String begin, @RequestParam String end) {
+		// This returns a JSON or XML with the users
+		return getTimeDistQueryResult(bar,begin,end);
+	}
+
+	public Map<String,Double> getTimeDistQueryResult(String bar, String beginDate, String endDate){
+		Map<String,String[]> intervals = new HashMap<>();
+		String[] morning = {"09:00:00","12:00:00"};
+		String[] afternoon = {"12:00:00","18:00:00"};
+		String[] evening = {"18:00:00","23:59:59"};
+		String[] lateEvening = {"00:00:00","03:00:00"};
+		intervals.put("morning",morning);
+		intervals.put("afternoon",afternoon);
+		intervals.put("evening",evening);
+		intervals.put("lateEvening",lateEvening);
+		Map<String,Double> results = new HashMap<>();
+		for (Map.Entry<String, String[]> entry : intervals.entrySet())
+		{
+			try{
+				SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+				results.put(entry.getKey(),barRepository.timeDistSalesPerBar(bar, ft.parse(beginDate), ft.parse(endDate),entry.getValue()[0],entry.getValue()[1]));
+			}
+			catch(ParseException e){
+				System.out.println(e);
+			}
+		}
+		return results;
 	}
 
 }

@@ -16,11 +16,14 @@ import javax.persistence.criteria.Expression;
 import javax.naming.spi.DirStateFactory.Result;
 import javax.persistence.EntityManager;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.*;
@@ -39,11 +42,25 @@ class DrinkerAndTotalSpent {
     }
 }
 
+class TimeDistObject {
+    double total;
+
+    public TimeDistObject(double total) {
+        this.total = total;
+    }
+    public String toString(){
+        return this.total + "";
+    }
+}
+
 @Service
 public class BarRepositoryImpl implements BarRepositoryCustom {
 
     @PersistenceContext
     private EntityManager em;
+
+    private static final Logger logger = LoggerFactory.getLogger(BarRepositoryImpl.class);
+
 
     /*
         select t.bar, sum(t.amountPaid) as total from Transactions t
@@ -62,7 +79,7 @@ public class BarRepositoryImpl implements BarRepositoryCustom {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<DrinkerAndTotalSpent> q = cb.createQuery(DrinkerAndTotalSpent.class);
         Root<Transaction> t = q.from(Transaction.class);
-        Predicate barNamePredicate = cb.equal(t.get("pkey").get("bar"), new Bar(barName));
+        Predicate barNamePredicate = cb.equal(t.get("bar"), new Bar(barName));
         q.where(barNamePredicate);
         
         Expression<Number> sum = cb.sum(t.get("amountPaid"));
@@ -102,5 +119,4 @@ public class BarRepositoryImpl implements BarRepositoryCustom {
 
 
     }
-    
 }

@@ -71,10 +71,10 @@ public class BarController {
 		String[] afternoon = {"12:00:00","18:00:00"};
 		String[] evening = {"18:00:00","23:59:59"};
 		String[] lateEvening = {"00:00:00","03:00:00"};
-		intervals.put("morning",morning);
-		intervals.put("afternoon",afternoon);
-		intervals.put("evening",evening);
-		intervals.put("lateEvening",lateEvening);
+		intervals.put("morning 09:00:00 - 12:00:00",morning);
+		intervals.put("afternoon 12:00:00 - 18:00:00",afternoon);
+		intervals.put("evening 18:00:00 - 23:59:59",evening);
+		intervals.put("lateEvening 00:00:00 - 03:00:00",lateEvening);
 		Map<String,Double> results = new HashMap<>();
 		for (Map.Entry<String, String[]> entry : intervals.entrySet())
 		{

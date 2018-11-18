@@ -1,5 +1,8 @@
 package com.ericandben.cs336.backendapp.beer;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -38,7 +41,13 @@ public class BeerController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/topFiveBars")
-	public @ResponseBody Page<BarBundle> getTopFiveBars(@RequestParam String beerName) {
+	public @ResponseBody Page<List<Object[]>> getTopFiveBars(@RequestParam String beerName) {
 		return beerRepository.topFiveBars(PageRequest.of(0,5), beerName);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topFiveDrinkers")
+	public @ResponseBody Page<List<Object[]>> getTopFiveDrinkers(@RequestParam String beerName) {
+		return beerRepository.topFiveDrinkers(PageRequest.of(0,5), beerName);
 	}
 }

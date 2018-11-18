@@ -58,4 +58,10 @@ order by numSold desc;
     " GROUP by i.item.name ORDER BY sum(i.quantity) DESC"
     )
     public Page<List<Object[]>> mostPopularBeersPerBar(Pageable pageable, String barName);
+
+    @Query(value = "select s2.manf, sum(i.quantity) " +
+    "from Includes i JOIN i.transaction.bar.itemsSold s JOIN treat(i.item as Beer) s2 " +
+    "where i.item.name = s.item.name " + 
+    "and i.transaction.bar.name = :barName and i.item.itemType = 'B' GROUP by s2.manf ORDER BY sum(i.quantity) DESC")
+    public Page<List<Object[]>> mostPopularManfsPerBar(Pageable pageable, String barName);
 }

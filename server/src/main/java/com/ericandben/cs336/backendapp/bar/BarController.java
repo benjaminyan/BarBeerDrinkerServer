@@ -115,5 +115,11 @@ public class BarController {
 		}
 		return results;
 	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topmanfsperbar")
+	public @ResponseBody Page<List<Object[]>> getTopManfsPerBar(@RequestParam String bar) {
+		// This returns a JSON or XML with the users
+		return barRepository.mostPopularManfsPerBar(PageRequest.of(0,5) , bar);
+	}
 
 }

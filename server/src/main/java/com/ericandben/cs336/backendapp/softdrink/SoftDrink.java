@@ -1,5 +1,7 @@
 package com.ericandben.cs336.backendapp.softdrink;
 import com.ericandben.cs336.backendapp.item.Item;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,15 +15,26 @@ public class SoftDrink extends Item {
     @Id
     private String name;
 
-    private String manf;
+    /* Had to change it to sManf because when querying for beers manf, it was picking this classes manf by mistake.
+    */
+    @Column(name = "manf")
+    private String sManf;
 
-    public String getManf() {
+    public String getSManf() {
+        return this.sManf;
+    }
+
+    public void setSManf(String sManf) {
+        this.sManf = sManf;
+    }
+
+    /*public String getManf() {
         return this.manf;
     }
 
     public void setManf(String manf) {
         this.manf = manf;
-    }
+    }*/
     public String getName() {
         return this.name;
     }

@@ -52,11 +52,11 @@ public class Bar {
     */
 
     // This map the bar to the items it sells
-    /*
+    
     @JsonIgnore
-    @OneToMany(mappedBy = "pkey.bar") // pkey is a property of Sells class
+    @OneToMany(mappedBy = "bar") // pkey is a property of Sells class
     private Set<Sells> itemsSold;
-    */
+    
 
     public String getName() {
         return this.name;

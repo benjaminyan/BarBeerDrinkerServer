@@ -42,16 +42,18 @@ class DrinkerAndTotalSpent {
     }
 }
 
-class TimeDistObject {
+/*class TimeDistObject {
+    ;
     double total;
 
-    public TimeDistObject(double total) {
+    public TimeDistObject(String label, double total) {
+        this.label = label;
         this.total = total;
     }
     public String toString(){
         return this.total + "";
     }
-}
+}*/
 
 @Service
 public class BarRepositoryImpl implements BarRepositoryCustom {

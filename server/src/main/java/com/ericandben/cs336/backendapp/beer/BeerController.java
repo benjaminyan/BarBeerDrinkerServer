@@ -1,6 +1,9 @@
 package com.ericandben.cs336.backendapp.beer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,5 +34,11 @@ public class BeerController {
 	public @ResponseBody Iterable<Beer> getAllBeers() {
 		// This returns a JSON or XML with the users
 		return beerRepository.findAll();
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topFiveBars")
+	public @ResponseBody Page<BarBundle> getTopFiveBars(@RequestParam String beerName) {
+		return beerRepository.topFiveBars(PageRequest.of(0,5), beerName);
 	}
 }

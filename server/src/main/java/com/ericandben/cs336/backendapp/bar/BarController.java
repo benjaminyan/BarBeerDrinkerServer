@@ -24,6 +24,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -102,6 +103,9 @@ public class BarController {
 				Double br = barRepository.timeDistSalesPerBar(bar, beginDateObj, endDateObj,
 				beginTime,
 				endTime);
+				if(br == null){
+					br = 0.0;
+				}
 				logger.warn(br + "");
 				logger.warn(beginTime.toString());
 				logger.warn(endTime.toString());
@@ -120,6 +124,41 @@ public class BarController {
 	public @ResponseBody Page<List<Object[]>> getTopManfsPerBar(@RequestParam String bar) {
 		// This returns a JSON or XML with the users
 		return barRepository.mostPopularManfsPerBar(PageRequest.of(0,5) , bar);
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/timedistsalesperweek")
+	public @ResponseBody Map<String,Double> getTimeDistSalesPerWeek(@RequestParam String bar, String beginDate) {
+		// This returns a JSON or XML with the users
+		return getTimeDistQueryResultPerWeek(bar, beginDate);
+	}
+	public Map<String,Double> getTimeDistQueryResultPerWeek(String bar, String beginDate){
+		Map<String,Double> results = new LinkedHashMap<>();
+		try{
+			DateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+			ft.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+			DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+			formatter.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+			Date currentDateObj = ft.parse(beginDate);
+			String currentDateString = beginDate;
+			for(int i = 0; i < 6; i++){
+				Calendar c = Calendar.getInstance();
+				c.setTime(currentDateObj);
+				c.add(Calendar.DATE, 1);  // number of days to add
+				String dt = ft.format(c.getTime());  // dt is now the new date
+				Date endDateObj = ft.parse(dt);
+				Double br = barRepository.timeDistSalesPerBarPerWeek(bar, currentDateObj, endDateObj);
+				if(br == null){
+					br = 0.0;
+				}
+				results.put(currentDateString,br);
+				currentDateString = dt;
+				currentDateObj = endDateObj;
+			}
+		}
+		catch(ParseException e){
+			System.out.println(e);
+		}
+		return results;
 	}
 
 }

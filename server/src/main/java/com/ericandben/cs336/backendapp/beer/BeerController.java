@@ -97,6 +97,9 @@ public class BeerController {
 				Double br = beerRepository.timeDistSalesPerBeer(beer, beginDateObj, endDateObj,
 				beginTime,
 				endTime);
+				if(br == null){
+					br = 0.0;
+				}
 				results.put(entry.getKey(),br);
 			}
 			catch(ParseException e){

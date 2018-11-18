@@ -64,4 +64,10 @@ order by numSold desc;
     "where i.item.name = s.item.name " + 
     "and i.transaction.bar.name = :barName and i.item.itemType = 'B' GROUP by s2.manf ORDER BY sum(i.quantity) DESC")
     public Page<List<Object[]>> mostPopularManfsPerBar(Pageable pageable, String barName);
+
+    @Query(value = "SELECT sum(t.amountPaid)" +
+    " FROM Transaction t" +
+    " WHERE t.bar.name = :barName"
+    + " AND t.dateTime BETWEEN :beginDate AND :endDate")
+    public Double timeDistSalesPerBarPerWeek(String barName,Date beginDate, Date endDate);
 }

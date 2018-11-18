@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 @Controller    // This means that this class is a Controller
@@ -77,7 +78,7 @@ public class BarController {
 
 
 	public Map<String,Double> getTimeDistQueryResult(String bar, String beginDate, String endDate){
-		Map<String,String[]> intervals = new HashMap<>();
+		Map<String,String[]> intervals = new LinkedHashMap<>();
 		String[] morning = {"09:00:00","12:00:00"};
 		String[] afternoon = {"12:00:00","18:00:00"};
 		String[] evening = {"18:00:00","23:59:59"};
@@ -86,7 +87,7 @@ public class BarController {
 		intervals.put("afternoon 12:00:00 - 18:00:00",afternoon);
 		intervals.put("evening 18:00:00 - 23:59:59",evening);
 		intervals.put("lateEvening 00:00:00 - 03:00:00",lateEvening);
-		Map<String,Double> results = new HashMap<>();
+		Map<String,Double> results = new LinkedHashMap<>();
 		for (Map.Entry<String, String[]> entry : intervals.entrySet())
 		{
 			try{

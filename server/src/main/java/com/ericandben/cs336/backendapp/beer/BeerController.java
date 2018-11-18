@@ -1,7 +1,16 @@
 package com.ericandben.cs336.backendapp.beer;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -49,5 +58,80 @@ public class BeerController {
 	@GetMapping(path="/topFiveDrinkers")
 	public @ResponseBody Page<List<Object[]>> getTopFiveDrinkers(@RequestParam String beerName) {
 		return beerRepository.topFiveDrinkers(PageRequest.of(0,5), beerName);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/timedistsales")
+	public @ResponseBody Map<String,Double> timeDistSales(@RequestParam String beer, @RequestParam String begin, @RequestParam String end) {
+		// This returns a JSON or XML with the users
+		return getTimeDistQueryResult(beer,begin,end);
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/timedistsalesperweek")
+	public @ResponseBody Map<String,Double> timeDistSalesPerWeek(@RequestParam String beer, @RequestParam String begin) {
+		// This returns a JSON or XML with the users
+		return getTimeDistQueryResultPerWeek(beer,begin);
+	}
+	public Map<String,Double> getTimeDistQueryResult(String beer, String beginDate, String endDate){
+		Map<String,String[]> intervals = new LinkedHashMap<>();
+		String[] morning = {"09:00:00","12:00:00"};
+		String[] afternoon = {"12:00:00","18:00:00"};
+		String[] evening = {"18:00:00","23:59:59"};
+		String[] lateEvening = {"00:00:00","03:00:00"};
+		intervals.put("morning 09:00:00 - 12:00:00",morning);
+		intervals.put("afternoon 12:00:00 - 18:00:00",afternoon);
+		intervals.put("evening 18:00:00 - 23:59:59",evening);
+		intervals.put("lateEvening 00:00:00 - 03:00:00",lateEvening);
+		Map<String,Double> results = new LinkedHashMap<>();
+		for (Map.Entry<String, String[]> entry : intervals.entrySet())
+		{
+			try{
+				DateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+				ft.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+				DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+				formatter.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+				Time beginTime = new Time(formatter.parse(entry.getValue()[0]).getTime());
+				Time endTime = new Time(formatter.parse(entry.getValue()[1]).getTime());
+				Date beginDateObj = ft.parse(beginDate);
+				Date endDateObj = ft.parse(endDate);
+				Double br = beerRepository.timeDistSalesPerBeer(beer, beginDateObj, endDateObj,
+				beginTime,
+				endTime);
+				results.put(entry.getKey(),br);
+			}
+			catch(ParseException e){
+				System.out.println(e);
+			}
+		}
+		return results;
+	}
+	public Map<String,Double> getTimeDistQueryResultPerWeek(String beer, String beginDate){
+			Map<String,Double> results = new LinkedHashMap<>();
+			try{
+				DateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+				ft.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+				DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+				formatter.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+				Date currentDateObj = ft.parse(beginDate);
+				String currentDateString = beginDate;
+				for(int i = 0; i < 6; i++){
+					Calendar c = Calendar.getInstance();
+					c.setTime(currentDateObj);
+					c.add(Calendar.DATE, 1);  // number of days to add
+					String dt = ft.format(c.getTime());  // dt is now the new date
+					Date endDateObj = ft.parse(dt);
+					Double br = beerRepository.timeDistSalesPerBeerPerWeek(beer, currentDateObj, endDateObj);
+					if(br == null){
+						br = 0.0;
+					}
+					results.put(currentDateString,br);
+					currentDateString = dt;
+					currentDateObj = endDateObj;
+				}
+			}
+			catch(ParseException e){
+				System.out.println(e);
+			}
+			return results;
 	}
 }

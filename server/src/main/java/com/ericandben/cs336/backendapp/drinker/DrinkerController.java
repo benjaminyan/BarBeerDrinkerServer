@@ -5,6 +5,8 @@ import com.ericandben.cs336.backendapp.sells.*;
 import com.ericandben.cs336.backendapp.likes.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -55,16 +57,19 @@ public class DrinkerController {
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping(path="/topbeersperdrinker")
-	public @ResponseBody List<Includes> topBeersPerDrinker(@RequestParam String drinker) {
-		return drinkerRepository.topBeers(drinker);
-	}
-
-
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/topbarsperdrinker")
 	public @ResponseBody List<BarAndTotalSpent> topBarsPerDrinker(@RequestParam String drinker,
 												@RequestParam String begin, @RequestParam String end) {
 		return drinkerRepository.barsByTotalSpentWithinTimeInterval(drinker, begin, end);
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/topbeersperdrinker")
+	public @ResponseBody Page<List<Object[]>> topBeersPerDrinker(@RequestParam String drinker) {
+		return drinkerRepository.topBeersForDrinker(PageRequest.of(0,5), drinker);
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/alltransactionsfordrinker")
+	public @ResponseBody List<Object[]> getAllTransactionsForDrinker(@RequestParam String drinker) {
+		return drinkerRepository.allTransactionsForDrinker(drinker);
 	}
 }

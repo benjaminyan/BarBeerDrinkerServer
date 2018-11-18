@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ericandben.cs336.backendapp.transaction.Transaction;
-
+import com.ericandben.cs336.backendapp.beer.*;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -54,6 +54,7 @@ order by numSold desc;
     // could not resolve property: name of: com.ericandben.cs336.backendapp.includes.Includes
     @Query(value = "SELECT i.item.name, sum(i.quantity)" +
     " FROM Includes i WHERE i.transaction.bar.name = :barName" +  
+    " AND i.item.itemType = 'B'" + 
     " GROUP by i.item.name ORDER BY sum(i.quantity) DESC"
     )
     public Page<List<Object[]>> mostPopularBeersPerBar(Pageable pageable, String barName);

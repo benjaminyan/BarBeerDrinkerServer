@@ -1,6 +1,8 @@
 package com.ericandben.cs336.backendapp.bar;
 import com.ericandben.cs336.backendapp.bar.*;
+import com.ericandben.cs336.backendapp.beer.Beer;
 import com.ericandben.cs336.backendapp.drinker.*;
+import com.ericandben.cs336.backendapp.includes.Includes;
 import com.ericandben.cs336.backendapp.transaction.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,7 +21,7 @@ import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -41,7 +43,6 @@ class DrinkerAndTotalSpent {
         this.total = total;
     }
 }
-
 /*class TimeDistObject {
     ;
     double total;

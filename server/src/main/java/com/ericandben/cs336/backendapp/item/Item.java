@@ -1,5 +1,6 @@
 package com.ericandben.cs336.backendapp.item;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -20,7 +21,8 @@ public abstract class Item {
     //@ManyToMany(mappedBy = "itemsLiked")
     //private Set<Drinker> likers;
 
-
+    @Column(name = "ItemType")
+    private String itemType;
     // Bars selling this item
     //@JsonIgnore
     //@OneToMany(mappedBy = "pkey.item") // pkey is a property of Sells
@@ -63,7 +65,13 @@ public abstract class Item {
         return Objects.hash(this.name);
     }
 
-    
+    public String getItemType() {
+        return this.itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
     
     
 }

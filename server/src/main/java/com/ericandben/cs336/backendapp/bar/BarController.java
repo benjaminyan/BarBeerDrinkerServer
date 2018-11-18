@@ -70,8 +70,8 @@ public class BarController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/topFiveBeers")
-	public @ResponseBody Page<List<Object[]>> getTopFiveBars(@RequestParam String beerName) {
-		return barRepository.mostPopularBeersPerBar(PageRequest.of(0,5), beerName);
+	public @ResponseBody Page<List<Object[]>> getTopFiveBeers(@RequestParam String barName) {
+		return barRepository.mostPopularBeersPerBar(PageRequest.of(0,5), barName);
 	}
 
 

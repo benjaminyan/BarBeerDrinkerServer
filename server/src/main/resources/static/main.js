@@ -322,8 +322,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _drinker_list_drinker_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./drinker-list/drinker-list.component */ "./src/app/drinker-list/drinker-list.component.ts");
 /* harmony import */ var _bar_list_bar_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./bar-list/bar-list.component */ "./src/app/bar-list/bar-list.component.ts");
 /* harmony import */ var _beer_list_beer_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./beer-list/beer-list.component */ "./src/app/beer-list/beer-list.component.ts");
-/* harmony import */ var _baraddtransaction_baraddtransaction_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./baraddtransaction/baraddtransaction.component */ "./src/app/baraddtransaction/baraddtransaction.component.ts");
-/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
+/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -341,16 +340,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var routes = [
     { path: 'home', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_2__["LandingComponent"] },
     { path: 'beers', component: _beer_list_beer_list_component__WEBPACK_IMPORTED_MODULE_9__["BeerListComponent"] },
     { path: 'bars', component: _bar_list_bar_list_component__WEBPACK_IMPORTED_MODULE_8__["BarListComponent"] },
     { path: 'drinkers', component: _drinker_list_drinker_list_component__WEBPACK_IMPORTED_MODULE_7__["DrinkerListComponent"] },
-    { path: 'drinkers/drinkergraph/:drinker', component: _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_11__["DrinkerGraphComponent"] },
+    { path: 'drinkers/drinkergraph/:drinker', component: _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_10__["DrinkerGraphComponent"] },
     { path: 'beers/:name', component: _beer_beer_component__WEBPACK_IMPORTED_MODULE_3__["BeerComponent"] },
     { path: 'bars/:name', component: _bar_bar_component__WEBPACK_IMPORTED_MODULE_4__["BarComponent"] },
-    { path: 'bars/:name/addtransaction', component: _baraddtransaction_baraddtransaction_component__WEBPACK_IMPORTED_MODULE_10__["BarAddTransactionComponent"] },
     { path: 'drinkers/:name', component: _drinker_drinker_component__WEBPACK_IMPORTED_MODULE_5__["DrinkerComponent"] },
     { path: 'sql', component: _sqlquery_sqlquery_component__WEBPACK_IMPORTED_MODULE_6__["SQLQueryComponent"] },
     { path: '#',
@@ -396,7 +393,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
 
 /***/ }),
 
@@ -465,17 +462,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! primeng/button */ "./node_modules/primeng/button.js");
 /* harmony import */ var primeng_button__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(primeng_button__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _baraddtransaction_baraddtransaction_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./baraddtransaction/baraddtransaction.component */ "./src/app/baraddtransaction/baraddtransaction.component.ts");
-/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! primeng/calendar */ "./node_modules/primeng/calendar.js");
-/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(primeng_calendar__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
+/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/calendar */ "./node_modules/primeng/calendar.js");
+/* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(primeng_calendar__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -511,8 +510,7 @@ var AppModule = /** @class */ (function () {
                 _drinker_list_drinker_list_component__WEBPACK_IMPORTED_MODULE_9__["DrinkerListComponent"],
                 _bar_list_bar_list_component__WEBPACK_IMPORTED_MODULE_10__["BarListComponent"],
                 _beer_list_beer_list_component__WEBPACK_IMPORTED_MODULE_11__["BeerListComponent"],
-                _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_19__["DrinkerGraphComponent"],
-                _baraddtransaction_baraddtransaction_component__WEBPACK_IMPORTED_MODULE_16__["BarAddTransactionComponent"]
+                _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_18__["DrinkerGraphComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -520,9 +518,11 @@ var AppModule = /** @class */ (function () {
                 primeng_table__WEBPACK_IMPORTED_MODULE_12__["TableModule"],
                 primeng_primeng__WEBPACK_IMPORTED_MODULE_13__["ChartModule"],
                 primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
-                primeng_calendar__WEBPACK_IMPORTED_MODULE_17__["CalendarModule"],
+                primeng_calendar__WEBPACK_IMPORTED_MODULE_16__["CalendarModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
@@ -633,7 +633,7 @@ module.exports = "#add:hover {\r\n    opacity: 0.8\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n    <div id=\"add\" class=\"col clickable-row\" style=\"padding: 50px; background-color: #20B2AA;\" [routerLink] = \"['/bars/',barName,'addtransaction']\">\r\n        <h1 class=\"text-center\">Add Transaction</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n<p-chart type=\"bar\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n<p-chart type=\"bar\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n<p-chart type=\"bar\"></p-chart>\r\n<p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n<p-chart type=\"line\"></p-chart>\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData1\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData3\"></p-chart>\r\n<p>Start date</p>\r\n<p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<p>End date</p>\r\n<p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n<br>\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\">Run Query</Button>\r\n<br>\r\n{{begin}}\r\n\r\n<br>\r\n{{end}}\r\n\r\n<p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData4\"></p-chart>\r\n\r\n<p>Start date (per week)</p>\r\n<p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of sales at {{barName}} per week</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData5\" ></p-chart>\r\n\r\n<br>\r\n{{beginWeek}}\r\n"
 
 /***/ }),
 
@@ -648,8 +648,11 @@ module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n  
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarComponent", function() { return BarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -662,14 +665,166 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var BarComponent = /** @class */ (function () {
-    function BarComponent(route) {
+    function BarComponent(dataService, router, route) {
+        this.dataService = dataService;
+        this.router = router;
         this.route = route;
+        this.chartOptions = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 50,
+                            beginAtZero: true
+                        }
+                    }]
+            }
+        };
     }
+    BarComponent.prototype.setBeginDate = function (d) {
+        d.setTime(d.getTime() + (new Date().getTimezoneOffset() * 60 * 1000));
+        this.begin = d;
+    };
+    BarComponent.prototype.setEndDate = function (d) {
+        d.setTime(d.getTime() + (new Date().getTimezoneOffset() * 60 * 1000));
+        this.end = d;
+    };
+    BarComponent.prototype.updateGraph = function () {
+        var _this = this;
+        var beginString = moment__WEBPACK_IMPORTED_MODULE_4__(this.begin).format('YYYY-MM-DD');
+        var endString = moment__WEBPACK_IMPORTED_MODULE_4__(this.end).format('YYYY-MM-DD');
+        var obs4 = this.dataService.getAvgSalesPerBar(this.barName, beginString, endString);
+        obs4.subscribe(function (data) {
+            _this.chartData4 = data;
+            var labels0 = Object.keys(data);
+            var i = 0;
+            var dataset0 = [];
+            for (i = 0; i < labels0.length; i++) {
+                dataset0[i] = data[labels0[i]];
+            }
+            _this.chartData4 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Average time distribution of Sales at ' + _this.barName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0,
+                        fill: false
+                    }
+                ]
+            };
+        });
+    };
+    BarComponent.prototype.updateGraphWeek = function () {
+        var _this = this;
+        var beginString = moment__WEBPACK_IMPORTED_MODULE_4__(this.beginWeek).format('YYYY-MM-DD');
+        var obs5 = this.dataService.getAvgSalesPerBarPerWeek(this.barName, beginString);
+        obs5.subscribe(function (data) {
+            _this.chartData5 = data;
+            var labels0 = Object.keys(data);
+            var i = 0;
+            var dataset0 = [];
+            for (i = 0; i < labels0.length; i++) {
+                dataset0[i] = data[labels0[i]];
+            }
+            _this.chartData5 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Average time distribution of Sales at ' + _this.barName + ' per week',
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0,
+                        fill: false
+                    }
+                ]
+            };
+        });
+    };
     BarComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.id = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (paramMap) { return paramMap.get('name'); }));
+        this.minDate = new Date(2018, 0, 1);
+        this.maxDate = new Date(2019, 2, 19);
+        this.begin = new Date(2018, 0, 1);
+        this.end = new Date(2018, 3, 2);
+        this.beginWeek = new Date(2018, 0, 1);
+        this.id = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (paramMap) { return paramMap.get('name'); }));
         this.id.subscribe(function (barName) { _this.barName = barName; });
+        console.log(this.barName);
+        var obs1 = this.dataService.getTopDrinkersPerBar(this.barName);
+        obs1.subscribe(function (data) {
+            _this.chartData1 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            for (i = 0; i < data.length; i++) {
+                labels0.push(data[i]['drinker']);
+                dataset0.push(data[i]['total']);
+            }
+            _this.chartData1 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 drinkers who spend the most at ' + _this.barName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        var obs2 = this.dataService.getTopFiveBeers(this.barName);
+        obs2.subscribe(function (data) {
+            _this.chartData2 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            var dataArr = data['content'];
+            for (i = 0; i < dataArr.length; i++) {
+                labels0.push(dataArr[i][0]);
+                dataset0.push(dataArr[i][1]);
+            }
+            _this.chartData2 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 beers which are most popular at ' + _this.barName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        var obs3 = this.dataService.getTopFiveManfsPerBar(this.barName);
+        obs3.subscribe(function (data) {
+            _this.chartData3 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            var dataArr = data['content'];
+            for (i = 0; i < dataArr.length; i++) {
+                labels0.push(dataArr[i][0]);
+                dataset0.push(dataArr[i][1]);
+            }
+            _this.chartData3 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 manufacturers which sell the most beer at ' + _this.barName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        this.updateGraph();
+        this.updateGraphWeek();
     };
     BarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -677,72 +832,9 @@ var BarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./bar.component.html */ "./src/app/bar/bar.component.html"),
             styles: [__webpack_require__(/*! ./bar.component.css */ "./src/app/bar/bar.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], BarComponent);
     return BarComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/baraddtransaction/baraddtransaction.component.css":
-/*!*******************************************************************!*\
-  !*** ./src/app/baraddtransaction/baraddtransaction.component.css ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/baraddtransaction/baraddtransaction.component.html":
-/*!********************************************************************!*\
-  !*** ./src/app/baraddtransaction/baraddtransaction.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n    Add Transaction works!\r\n</p>"
-
-/***/ }),
-
-/***/ "./src/app/baraddtransaction/baraddtransaction.component.ts":
-/*!******************************************************************!*\
-  !*** ./src/app/baraddtransaction/baraddtransaction.component.ts ***!
-  \******************************************************************/
-/*! exports provided: BarAddTransactionComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarAddTransactionComponent", function() { return BarAddTransactionComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var BarAddTransactionComponent = /** @class */ (function () {
-    function BarAddTransactionComponent() {
-    }
-    BarAddTransactionComponent.prototype.ngOnInit = function () {
-    };
-    BarAddTransactionComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-baraddtransaction',
-            template: __webpack_require__(/*! ./baraddtransaction.component.html */ "./src/app/baraddtransaction/baraddtransaction.component.html"),
-            styles: [__webpack_require__(/*! ./baraddtransaction.component.css */ "./src/app/baraddtransaction/baraddtransaction.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], BarAddTransactionComponent);
-    return BarAddTransactionComponent;
 }());
 
 
@@ -841,7 +933,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"text-center\">{{beerName}}</h1>\r\n<p class=\"text-center\"><b>Top 5 Bars where this beer sells the most</b></p>\r\n<p-chart type=\"bar\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Consumers of this beer</b></p>\r\n<p-chart type=\"bar\"></p-chart>\r\n<p class=\"text-center\"><b>Time Distribution of when this beer sells the most</b></p>\r\n<p-chart type=\"line\"></p-chart>\r\n"
+module.exports = "<h1 class=\"text-center\">{{beerName}}</h1>\r\n<p class=\"text-center\"><b>Top 5 Bars where this beer sells the most</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData1\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Consumers of this beer</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n<p>Start date (per day)</p>\r\n<p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<p>End date (per day)</p>\r\n<p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n<br>\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of when this beer sells the most</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData3\"></p-chart>\r\n\r\n<br>\r\n{{begin}}\r\n\r\n<br>\r\n{{end}}\r\n\r\n<p>Start date (per week)</p>\r\n<p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of when this beer sells the most per week</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData4\"></p-chart>\r\n\r\n<br>\r\n{{beginWeek}}\r\n\r\n"
 
 /***/ }),
 
@@ -856,8 +948,11 @@ module.exports = "<h1 class=\"text-center\">{{beerName}}</h1>\r\n<p class=\"text
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BeerComponent", function() { return BeerComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -870,14 +965,134 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var BeerComponent = /** @class */ (function () {
-    function BeerComponent(route) {
+    function BeerComponent(route, dataService) {
         this.route = route;
+        this.dataService = dataService;
+        this.minDate = new Date(2018, 0, 1);
+        this.maxDate = new Date(2019, 2, 19);
+        this.begin = new Date(2018, 0, 1);
+        this.beginWeek = new Date(2018, 0, 1);
+        this.end = new Date(2018, 3, 2);
+        this.chartOptions = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 5,
+                            beginAtZero: true
+                        }
+                    }]
+            }
+        };
     }
+    BeerComponent.prototype.updateGraph = function () {
+        var _this = this;
+        var beginString = moment_moment__WEBPACK_IMPORTED_MODULE_4__(this.begin).format('YYYY-MM-DD');
+        var endString = moment_moment__WEBPACK_IMPORTED_MODULE_4__(this.end).format('YYYY-MM-DD');
+        var obs3 = this.dataService.getAvgSalesPerBeer(this.beerName, beginString, endString);
+        obs3.subscribe(function (data) {
+            _this.chartData3 = data;
+            var labels0 = Object.keys(data);
+            var i = 0;
+            var dataset0 = [];
+            for (i = 0; i < labels0.length; i++) {
+                dataset0[i] = data[labels0[i]];
+            }
+            _this.chartData3 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Average time distribution of ' + _this.beerName + ' purchased per day',
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0,
+                        fill: false
+                    }
+                ]
+            };
+        });
+    };
+    BeerComponent.prototype.updateGraphWeek = function () {
+        var _this = this;
+        var beginString = moment_moment__WEBPACK_IMPORTED_MODULE_4__(this.beginWeek).format('YYYY-MM-DD');
+        console.log(beginString);
+        var obs4 = this.dataService.getAvgSalesPerBeerPerWeek(this.beerName, beginString);
+        obs4.subscribe(function (data) {
+            _this.chartData4 = data;
+            var labels0 = Object.keys(data);
+            var i = 0;
+            var dataset0 = [];
+            for (i = 0; i < labels0.length; i++) {
+                dataset0[i] = data[labels0[i]];
+            }
+            _this.chartData4 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Average time distribution of ' + _this.beerName + ' purchased per day',
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0,
+                        fill: false
+                    }
+                ]
+            };
+        });
+    };
     BeerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.id = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (paramMap) { return paramMap.get('name'); }));
+        this.id = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (paramMap) { return paramMap.get('name'); }));
         this.id.subscribe(function (beerName) { _this.beerName = beerName; });
+        var obs1 = this.dataService.getTopFiveBars(this.beerName);
+        obs1.subscribe(function (data) {
+            _this.chartData1 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            var dataArr = data['content'];
+            for (i = 0; i < dataArr.length; i++) {
+                labels0.push(dataArr[i][0]);
+                dataset0.push(dataArr[i][1]);
+            }
+            _this.chartData1 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 bars that sell the most ' + _this.beerName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        var obs2 = this.dataService.getTopFiveDrinkers(this.beerName);
+        obs2.subscribe(function (data) {
+            _this.chartData2 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            var dataArr = data['content'];
+            for (i = 0; i < dataArr.length; i++) {
+                labels0.push(dataArr[i][0]);
+                dataset0.push(dataArr[i][1]);
+            }
+            _this.chartData2 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 drinkers who buy the most ' + _this.beerName,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        this.updateGraph();
+        this.updateGraphWeek();
     };
     BeerComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -885,7 +1100,7 @@ var BeerComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./beer.component.html */ "./src/app/beer/beer.component.html"),
             styles: [__webpack_require__(/*! ./beer.component.css */ "./src/app/beer/beer.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
     ], BeerComponent);
     return BeerComponent;
 }());
@@ -1016,7 +1231,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n    <p-table [value] = \"transactionArr\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n      <ng-template pTemplate=\"header\">\r\n          <tr>\r\n              <th *ngFor=\"let col of columns\" [style.width.%]=\"col.width\"> <!-- specifying the width of columns -->\r\n                {{col.header}}\r\n              </th>\r\n          </tr>\r\n      </ng-template>\r\n      <ng-template pTemplate=\"body\" let-drinker>\r\n          <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n              <td *ngFor='let col of columns'>\r\n                {{drinker[col.field]}}\r\n              </td>\r\n          </tr>\r\n      </ng-template>\r\n    </p-table>\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1032,6 +1247,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkerComponent", function() { return DrinkerComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1043,18 +1260,42 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var DrinkerComponent = /** @class */ (function () {
-    function DrinkerComponent(dataService) {
+    function DrinkerComponent(route, dataService) {
+        this.route = route;
         this.dataService = dataService;
     }
-    DrinkerComponent.prototype.ngOnInit = function () { };
+    DrinkerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.columns = [
+            { header: 'tid', field: 'tid', width: '20' },
+            { header: 'Bar Name', field: 'bar', width: '20' },
+            { header: 'Amount Paid', field: 'amountPaid', width: '15' },
+            { header: 'Date', field: 'dateTime', width: '13' },
+            { header: 'Tip', field: 'tip', width: '10' }
+        ];
+        this.dataObs = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (params) { return _this.dataService.getTransactionsForDrinker(params.get('name')); }));
+        this.dataObs.subscribe(function (data) {
+            var i = 0;
+            var j = 0;
+            _this.transactionArr = [];
+            for (i = 0; i < data.length; i++) {
+                var newTransaction = void 0;
+                newTransaction = new _services_data_service__WEBPACK_IMPORTED_MODULE_1__["TransactionBundle"](data[i][0], data[i][1], data[i][2], data[i][3], data[i][4]);
+                _this.transactionArr.push(newTransaction);
+            }
+            console.log(_this.transactionArr);
+        });
+    };
     DrinkerComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-drinker',
             template: __webpack_require__(/*! ./drinker.component.html */ "./src/app/drinker/drinker.component.html"),
             styles: [__webpack_require__(/*! ./drinker.component.css */ "./src/app/drinker/drinker.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
     ], DrinkerComponent);
     return DrinkerComponent;
 }());
@@ -1081,7 +1322,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData1\"></p-chart>\r\n\r\n    <p>Start date</p>\r\n    <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n    <br>\r\n    \r\n    <p>End date</p>\r\n    <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n    <br>\r\n    <Button class=\"btn\" type=\"submit\">Run Query</Button>\r\n\r\n    <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData2\"></p-chart>\r\n\r\n    <br>\r\n    {{begin}}\r\n\r\n    <br>\r\n    {{end}}\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n\r\n    <p>Start date</p>\r\n    <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n    <br>\r\n    \r\n    <p>End date</p>\r\n    <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n    <br>\r\n    <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n\r\n    <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData2\"></p-chart>\r\n\r\n    <br>\r\n    {{begin}}\r\n\r\n    <br>\r\n    {{end}}\r\n</div>"
 
 /***/ }),
 
@@ -1121,17 +1362,23 @@ var DrinkerGraphComponent = /** @class */ (function () {
         this.maxDate = new Date('2019-03-19');
         this.begin = new Date('2018-01-01');
         this.end = new Date('2018-04-02');
+        this.chartOptions = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 5,
+                            beginAtZero: true
+                        }
+                    }]
+            }
+        };
     }
-    DrinkerGraphComponent.prototype.ngOnInit = function () {
+    DrinkerGraphComponent.prototype.updateGraph = function () {
         var _this = this;
-        var urlArr = this.router.url.split('/');
-        var tmpStr = urlArr[urlArr.length - 1];
-        var tmpStrArr = tmpStr.split('%20');
-        this.selectedDrinker = tmpStrArr.join(' ');
         var beginString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(this.begin).format('YYYY-MM-DD');
         var endString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(this.end).format('YYYY-MM-DD');
-        var obs = this.dataService.getTopBarsPerDrinkerBetween(this.selectedDrinker, beginString, endString);
-        obs.subscribe(function (data) {
+        var obs2 = this.dataService.getTopBarsPerDrinkerBetween(this.selectedDrinker, beginString, endString);
+        obs2.subscribe(function (data) {
             _this.chartData2 = data;
             var labels0 = [];
             var dataset0 = [];
@@ -1152,6 +1399,37 @@ var DrinkerGraphComponent = /** @class */ (function () {
                 ]
             };
         });
+    };
+    DrinkerGraphComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var urlArr = this.router.url.split('/');
+        var tmpStr = urlArr[urlArr.length - 1];
+        var tmpStrArr = tmpStr.split('%20');
+        this.selectedDrinker = tmpStrArr.join(' ');
+        var obs1 = this.dataService.getTopFiveBeersPerDrinker(this.selectedDrinker);
+        obs1.subscribe(function (data) {
+            _this.chartData1 = data;
+            var labels0 = [];
+            var dataset0 = [];
+            var i = 0;
+            var dataArr = data['content'];
+            for (i = 0; i < dataArr.length; i++) {
+                labels0.push(dataArr[i][0]);
+                dataset0.push(dataArr[i][1]);
+            }
+            _this.chartData1 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 bars that sell the most ' + _this.selectedDrinker,
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+        this.updateGraph();
     };
     DrinkerGraphComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1236,12 +1514,18 @@ var LandingComponent = /** @class */ (function () {
 /*!******************************************!*\
   !*** ./src/app/services/data.service.ts ***!
   \******************************************/
-/*! exports provided: BarAndTotalSpent, DataService */
+/*! exports provided: BarAndTotalSpent, DrinkerAndTotalSpent, TimeDistObject, BarBundle, DrinkerBundle, BeerBundle, TransactionBundle, DataService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarAndTotalSpent", function() { return BarAndTotalSpent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkerAndTotalSpent", function() { return DrinkerAndTotalSpent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeDistObject", function() { return TimeDistObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarBundle", function() { return BarBundle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkerBundle", function() { return DrinkerBundle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BeerBundle", function() { return BeerBundle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionBundle", function() { return TransactionBundle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _config_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/settings */ "./src/app/config/settings.ts");
@@ -1268,6 +1552,70 @@ var BarAndTotalSpent = /** @class */ (function () {
     return BarAndTotalSpent;
 }());
 
+var DrinkerAndTotalSpent = /** @class */ (function () {
+    function DrinkerAndTotalSpent(drinker, total) {
+        this.drinker = drinker;
+        this.total = total;
+        this.drinkerName = drinker;
+        this.totalAmount = total;
+    }
+    return DrinkerAndTotalSpent;
+}());
+
+var TimeDistObject = /** @class */ (function () {
+    function TimeDistObject(total) {
+        this.total = total;
+        this.totalAmount = total;
+    }
+    return TimeDistObject;
+}());
+
+var BarBundle = /** @class */ (function () {
+    function BarBundle(barName, amountSold) {
+        this.barName = barName;
+        this.amountSold = amountSold;
+        this.barBundleName = barName;
+        this.barBundleSold = amountSold;
+    }
+    return BarBundle;
+}());
+
+var DrinkerBundle = /** @class */ (function () {
+    function DrinkerBundle(barName, amountSold) {
+        this.barName = barName;
+        this.amountSold = amountSold;
+        this.drinkerBundleName = barName;
+        this.drinkerBundleSold = amountSold;
+    }
+    return DrinkerBundle;
+}());
+
+var BeerBundle = /** @class */ (function () {
+    function BeerBundle(barName, amountSold) {
+        this.barName = barName;
+        this.amountSold = amountSold;
+        this.beerBundleName = barName;
+        this.beerBundleSold = amountSold;
+    }
+    return BeerBundle;
+}());
+
+var TransactionBundle = /** @class */ (function () {
+    function TransactionBundle(tidVal, barVal, amountPaidVal, dateTimeVal, tipVal) {
+        this.tidVal = tidVal;
+        this.barVal = barVal;
+        this.amountPaidVal = amountPaidVal;
+        this.dateTimeVal = dateTimeVal;
+        this.tipVal = tipVal;
+        this.tid = tidVal;
+        this.bar = barVal;
+        this.amountPaid = amountPaidVal;
+        this.dateTime = dateTimeVal;
+        this.tip = tipVal;
+    }
+    return TransactionBundle;
+}());
+
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
@@ -1290,6 +1638,79 @@ var DataService = /** @class */ (function () {
             .set('end', end);
         var options = { params: parameters };
         return this.http.get(this.base + 'drinkers/topbarsperdrinker', options);
+    };
+    DataService.prototype.getTopDrinkersPerBar = function (bar) {
+        // begin, end has the form yyyy-mm-dd
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('bar', bar);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'bars/topdrinkersperbar', options);
+    };
+    DataService.prototype.getAvgSalesPerBar = function (bar, begin, end) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('bar', bar)
+            .set('begin', begin)
+            .set('end', end);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'bars/timedistsales', options);
+    };
+    DataService.prototype.getTopFiveBars = function (beer) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('beerName', beer);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'beers/topFiveBars', options);
+    };
+    DataService.prototype.getTopFiveDrinkers = function (beer) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('beerName', beer);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'beers/topFiveDrinkers', options);
+    };
+    DataService.prototype.getTopFiveBeers = function (bar) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('barName', bar);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'bars/topFiveBeers', options);
+    };
+    DataService.prototype.getTopFiveBeersPerDrinker = function (drinker) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('drinker', drinker);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'drinkers/topbeersperdrinker', options);
+    };
+    DataService.prototype.getTransactionsForDrinker = function (drinker) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('drinker', drinker);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'drinkers/alltransactionsfordrinker', options);
+    };
+    DataService.prototype.getAvgSalesPerBeer = function (beer, begin, end) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('beer', beer)
+            .set('begin', begin)
+            .set('end', end);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'beers/timedistsales', options);
+    };
+    DataService.prototype.getAvgSalesPerBeerPerWeek = function (beer, begin) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('beer', beer)
+            .set('begin', begin);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'beers/timedistsalesperweek', options);
+    };
+    DataService.prototype.getTopFiveManfsPerBar = function (bar) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('bar', bar);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'bars/topmanfsperbar', options);
+    };
+    DataService.prototype.getAvgSalesPerBarPerWeek = function (bar, beginDate) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('bar', bar)
+            .set('beginDate', beginDate);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'bars/timedistsalesperweek', options);
     };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

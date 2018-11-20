@@ -38,6 +38,14 @@ public class DrinkerController {
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/summary")
+	public @ResponseBody Page<Drinker> summary(@RequestParam(value = "page", defaultValue = "0") int page,
+	@RequestParam(value = "limit", defaultValue = "15") int limit) {
+		return drinkerRepository.findAll(PageRequest.of(page, limit));
+	}
+
+
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<Drinker> getAllDrinkers() {
 		return drinkerRepository.findAll();

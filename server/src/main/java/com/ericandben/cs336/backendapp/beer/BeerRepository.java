@@ -21,6 +21,9 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 }*/
 public interface BeerRepository extends PagingAndSortingRepository<Beer, String> {
     public Beer findByName(String name);
+
+    public Page<Beer> findAll(Pageable pageable);
+
     @Query(value = "select i.transaction.bar.name, sum(i.quantity) from Includes i" + 
     " where i.item.name = :beername" + 
     " group by i.transaction.bar.name" + 

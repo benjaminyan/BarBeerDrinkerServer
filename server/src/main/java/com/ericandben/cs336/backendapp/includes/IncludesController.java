@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Page;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +42,13 @@ public class IncludesController {
 	private ItemRepository itemRepository;
 
 	@Autowired BarRepository barRepository;
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/summary")
+	public @ResponseBody Page<Includes> summary(@RequestParam(value = "page", defaultValue = "0") int page,
+	@RequestParam(value = "limit", defaultValue = "15") int limit) {
+		return includesRepository.findAll(PageRequest.of(page, limit));
+	}
 
 	@GetMapping(path="/add") // Map ONLY GET Requests
 	public @ResponseBody String addNewIncludes (@RequestParam String barName, @RequestParam Long tid, 

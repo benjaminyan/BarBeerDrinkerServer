@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Page;
+
+
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/transactions") // This means URL's start with /demo (after Application path)
 public class TransactionController {
@@ -25,7 +30,14 @@ public class TransactionController {
     private ItemRepository itemRepository;
     
     @Autowired
-    private DrinkerRepository drinkerRepository;
+	private DrinkerRepository drinkerRepository;
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/summary")
+	public @ResponseBody Page<Transaction> summary(@RequestParam(value = "page", defaultValue = "0") int page,
+	@RequestParam(value = "limit", defaultValue = "15") int limit) {
+		return transactionRepository.findAll(PageRequest.of(page, limit));
+	}
 
 	@GetMapping(path="/add") // Map ONLY GET Requests
 	public @ResponseBody String addNewSells (@RequestParam String barName) {

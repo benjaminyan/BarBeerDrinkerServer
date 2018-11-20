@@ -27,6 +27,8 @@ class BeerWithSales {
 public interface BarRepository extends PagingAndSortingRepository<Bar, Integer>, BarRepositoryCustom  {
     
     public Bar findByName(String name);
+
+    public Page<Bar> findAll(Pageable pageable);
     
 
     @Query(value = "SELECT sum(t.amountPaid)" +

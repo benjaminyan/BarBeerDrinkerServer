@@ -14,6 +14,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+//import javax.activation.DataSource;
+import javax.sql.DataSource;
+
 // See https://stackoverflow.com/questions/8367312/serializing-with-jackson-json-getting-no-serializer-found
 
 @SpringBootApplication
@@ -33,6 +37,11 @@ public class DemoApplication extends SpringBootServletInitializer {
         mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);    
 
         return mapper;
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
     }
 
 	@Bean

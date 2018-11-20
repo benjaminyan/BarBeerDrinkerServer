@@ -23,6 +23,7 @@ public abstract class BaseController<T, K extends Serializable> {
         return getRepository().findAll(pageable);
     }
 
+
     // subclasses will implement this method to return their particular repository instance
     public abstract PagingAndSortingRepository<T, K> getRepository();
 

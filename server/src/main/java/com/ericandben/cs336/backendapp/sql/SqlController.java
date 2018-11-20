@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashMap;
 
 import org.springframework.http.ResponseEntity;
@@ -29,15 +32,19 @@ class SQLResponse {
 
     List<String> colNames;
     List<Map<String, String>> rows;
+    String error = null;
+
+    @JsonIgnore
     Map<String, String> currentRow;
+
 
     public SQLResponse() {
         this.colNames = new ArrayList<>();
         this.rows = new ArrayList<>();
         
         // Init the first row
-        this.currentRow = new HashMap<>();
-        this.rows.add(this.currentRow);
+        //this.currentRow = new HashMap<>();
+        //this.rows.add(this.currentRow);
     }
 
     public void addColumn(String name) {
@@ -133,13 +140,13 @@ public class SqlController<T, K extends Serializable> {
                 // Extract data for each row
                 String data;
                 while (rs.next()) {
+                    response.nextRow(); // Advance the row
 
                     // could loop over column names instead
                     for (int colNum = 1; colNum <= columnCount; colNum++) {
                         data = rs.getString(colNum);
                         response.setRowData(colNum, data);
                     }
-                    response.nextRow(); // We're finished with this row.
                 }
 
                 return response;

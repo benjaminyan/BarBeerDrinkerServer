@@ -23,18 +23,30 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.jdbc.core.CallableStatementCreator;
+import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.StatementCallback;
+import org.springframework.jdbc.core.StatementCreatorUtils;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 class SQLResponse {
 
     List<String> colNames;
     List<Map<String, String>> rows;
     String error = null;
+    String result = null;
 
     @JsonIgnore
     Map<String, String> currentRow;
@@ -125,6 +137,50 @@ public class SqlController<T, K extends Serializable> {
         
         SQLResponse response = new SQLResponse();
 
+        
+        
+        PreparedStatementCallback<Object> psc = new PreparedStatementCallback<Object>() {
+            
+            @Override  
+            public Boolean doInPreparedStatement(PreparedStatement ps)  
+            throws SQLException, DataAccessException {
+              
+            return ps.execute();  
+              
+            }  
+        };
+
+
+        /*
+        ConnectionCallback ccb = new ConnectionCallback<T>() {
+        };
+        */
+
+        
+
+        
+
+        /*
+        PreparedStatementCreator pscr = new PreparedStatementCreator(){
+        
+            @Override
+            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+                return null;
+            }
+        };
+
+        
+        CallableStatementCreator csc = new CallableStatementCreator(){
+        
+            @Override
+            public CallableStatement createCallableStatement(Connection con) throws SQLException {
+                // return con.createStatement(resultSetType, resultSetConcurrency);
+                return null;
+            }
+        };
+        */
+
+
         ResultSetExtractor<SQLResponse> rse = new ResultSetExtractor<SQLResponse>() {
 
             public SQLResponse extractData(ResultSet rs) throws SQLException {
@@ -157,16 +213,45 @@ public class SqlController<T, K extends Serializable> {
             }
         };
 
+        StatementCallback<SQLResponse> scb = new StatementCallback<SQLResponse>() {
+            @Override  
+            public SQLResponse doInStatement(Statement st)  
+            throws SQLException, DataAccessException {
+
+                // SQLResponse rsp = new SQLResponse();
+
+                //st.executeQuery(sql)
+                boolean queryType = st.execute(query);
+                if (queryType == true) {        // st was a query.
+                    
+                    ResultSet rs = st.getResultSet();
+                    rse.extractData(rs);        // This will modify our response object.
+                    
+                }
+                // result is an update object
+                response.result = Long.toString(st.getLargeUpdateCount()) + " rows affected.";
+
+                return response;
+            }
+
+        };
+
+        
+
         // Run the query, and use rse to deal with the results.
         // We cannot use a RowMapper becasue that handles individual rows. We need a way to
         // extract the column metadata.
         try{
-            jdbcTemplate.query(query, rse);
+            //jdbcTemplate.query(query, rse);
+            SQLResponse rsp = jdbcTemplate.execute(scb);
+            //response.result = rsp;
+            return rsp;
         }
-        catch(DataAccessException e){
-            response.error = e.getMessage();
+        catch(DataAccessException e) {
+            SQLResponse response2 = new SQLResponse();
+            response2.error = e.getMessage();
+            return response2;
         }
-        return response;
 
     }
 

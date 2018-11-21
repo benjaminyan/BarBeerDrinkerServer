@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -117,6 +119,7 @@ public class SqlController<T, K extends Serializable> {
     private JdbcTemplate jdbcTemplate;
 
 
+    @CrossOrigin(origins="http://localhost:4200")
     @PostMapping(path="object/run")
     public @ResponseBody SQLResponse runQuery2(@RequestParam String query) {
         
@@ -157,7 +160,12 @@ public class SqlController<T, K extends Serializable> {
         // Run the query, and use rse to deal with the results.
         // We cannot use a RowMapper becasue that handles individual rows. We need a way to
         // extract the column metadata.
-        jdbcTemplate.query(query, rse);
+        try{
+            jdbcTemplate.query(query, rse);
+        }
+        catch(DataAccessException e){
+            response.error = e.getMessage();
+        }
         return response;
 
     }

@@ -4,6 +4,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import com.ericandben.cs336.backendapp.includes.*;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
@@ -51,5 +52,18 @@ public interface DrinkerRepository extends PagingAndSortingRepository<Drinker, S
     "FROM Transaction t " + 
     "WHERE t.drinker.name = :drinkerName")
     public List<Object[]> allTransactionsForDrinker(String drinkerName);
+
+    @Query(value = "SELECT DATE(t.dateTime), sum(t.amountPaid)" +
+    " FROM Transaction t" + 
+    " WHERE t.drinker.name = :drinker AND t.dateTime BETWEEN :beginDate AND :endDate " +
+    "group by DATE(t.dateTime)")
+    public List<Object[]> spendingPerDrinkerPerWeek(String drinker, Date beginDate, Date endDate);
+
+    @Query(value = "SELECT MONTH(t.dateTime), sum(t.amountPaid) " +
+    "FROM Transaction t " +
+    "WHERE t.drinker.name = :drinker " + 
+    "GROUP BY MONTH(t.dateTime)")
+    public List<Object[]> spendingPerDrinkerPerMonth(String drinker);
+
 
 }

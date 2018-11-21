@@ -22,6 +22,7 @@ public interface DrinkerRepositoryCustom {
 
     public List<BarAndTotalSpent> barsByTotalSpentWithinTimeInterval(String drinkerName, String dateBeginning, String dateEnd);
 
+
     public List<Likes> getLikes();
 
     public List<Sells> getSells();

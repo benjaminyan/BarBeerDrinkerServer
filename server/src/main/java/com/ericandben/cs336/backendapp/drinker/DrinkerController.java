@@ -15,9 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/drinkers") // This means URL's start with /demo (after Application path)
@@ -78,6 +82,39 @@ public class DrinkerController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(path="/alltransactionsfordrinker")
 	public @ResponseBody List<Object[]> getAllTransactionsForDrinker(@RequestParam String drinker) {
-		return drinkerRepository.allTransactionsForDrinker(drinker);
+		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		List<Object[]> list = drinkerRepository.allTransactionsForDrinker(drinker);
+		for(Object[] obj : list){
+			SimpleDateFormat ft2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			ft2.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+			String dateString = ft2.format(obj[3]);
+			obj[3] = dateString;
+		}
+		return list;
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/spendingperweek")
+	public @ResponseBody List<Object[]> getSpendingPerWeek(@RequestParam String drinker, @RequestParam String beginDate,
+	@RequestParam String endDate) {
+		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+		try{
+			List<Object[]> list = drinkerRepository.spendingPerDrinkerPerWeek(drinker,ft.parse(beginDate), ft.parse(endDate));
+			for(Object[] obj : list){
+				SimpleDateFormat ft2 = new SimpleDateFormat("yyyy-MM-dd");
+				ft2.setTimeZone(TimeZone.getTimeZone("UTC-5"));
+				String dateString = ft2.format(obj[0]);
+				obj[0] = dateString;
+			}
+			return list;
+		}
+		catch(ParseException e){
+
+		}
+		return null;
+	}
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(path="/spendingpermonth")
+	public @ResponseBody List<Object[]> getSpendingPerMonth(@RequestParam String drinker) {
+		return drinkerRepository.spendingPerDrinkerPerMonth(drinker);
 	}
 }

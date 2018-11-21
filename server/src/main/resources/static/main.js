@@ -393,7 +393,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light mb-4\">\r\n  <a class=\"navbar-brand\" href=\"index.html\">Bar Beer Drinker Plus</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/drinkers\" routerLinkActive=\"active\" >Drinkers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/beers\" routerLinkActive=\"active\">Beers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/bars\" routerLinkActive=\"active\">Bars</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" routerLink = \"/sql\" routerLinkActive=\"active\">SQL Queries</a>\r\n      </li>\r\n\r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<footer class=\"mt-3\"></footer>"
 
 /***/ }),
 
@@ -464,16 +464,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! primeng/calendar */ "./node_modules/primeng/calendar.js");
 /* harmony import */ var primeng_calendar__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(primeng_calendar__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var primeng_dropdown__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! primeng/dropdown */ "./node_modules/primeng/dropdown.js");
+/* harmony import */ var primeng_dropdown__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(primeng_dropdown__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./drinkergraph/drinkergraph.component */ "./src/app/drinkergraph/drinkergraph.component.ts");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -510,7 +513,7 @@ var AppModule = /** @class */ (function () {
                 _drinker_list_drinker_list_component__WEBPACK_IMPORTED_MODULE_9__["DrinkerListComponent"],
                 _bar_list_bar_list_component__WEBPACK_IMPORTED_MODULE_10__["BarListComponent"],
                 _beer_list_beer_list_component__WEBPACK_IMPORTED_MODULE_11__["BeerListComponent"],
-                _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_18__["DrinkerGraphComponent"],
+                _drinkergraph_drinkergraph_component__WEBPACK_IMPORTED_MODULE_19__["DrinkerGraphComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -520,9 +523,11 @@ var AppModule = /** @class */ (function () {
                 primeng_button__WEBPACK_IMPORTED_MODULE_14__["ButtonModule"],
                 primeng_calendar__WEBPACK_IMPORTED_MODULE_16__["CalendarModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"],
-                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_19__["MatDatepickerModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_18__["BrowserAnimationsModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__["MatDatepickerModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_21__["ReactiveFormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormsModule"],
+                primeng_dropdown__WEBPACK_IMPORTED_MODULE_17__["DropdownModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
@@ -554,7 +559,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p-table [value] = \"barList\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n  <ng-template pTemplate=\"header\">\r\n      <tr>\r\n          <th *ngFor=\"let col of columns\">\r\n            {{col.header}}\r\n          </th>\r\n      </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-bar>\r\n      <tr style=\"height:30px\"  class='clickable-row' [routerLink] = \"['/bars/',bar.name]\">\r\n          <td *ngFor='let col of columns'>\r\n            {{bar[col.field]}}\r\n          </td>\r\n      </tr>\r\n  </ng-template>\r\n</p-table>\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n<p-table [value] = \"barList\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n  <ng-template pTemplate=\"header\">\r\n      <tr>\r\n          <th *ngFor=\"let col of columns\">\r\n            {{col.header}}\r\n          </th>\r\n      </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-bar>\r\n      <tr style=\"height:30px\"  class='clickable-row' [routerLink] = \"['/bars/',bar.name]\">\r\n          <td *ngFor='let col of columns'>\r\n            {{bar[col.field]}}\r\n          </td>\r\n      </tr>\r\n  </ng-template>\r\n</p-table>\r\n</div>"
 
 /***/ }),
 
@@ -633,7 +638,7 @@ module.exports = "#add:hover {\r\n    opacity: 0.8\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData1\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData3\"></p-chart>\r\n<p>Start date</p>\r\n<p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<p>End date</p>\r\n<p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n<br>\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\">Run Query</Button>\r\n<br>\r\n{{begin}}\r\n\r\n<br>\r\n{{end}}\r\n\r\n<p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData4\"></p-chart>\r\n\r\n<p>Start date (per week)</p>\r\n<p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of sales at {{barName}} per week</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData5\" ></p-chart>\r\n\r\n<br>\r\n{{beginWeek}}\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData1\" [options] = \"chartOptions\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <p>Start date</p>\r\n      <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n      <br>\r\n\r\n      <p>End date</p>\r\n      <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n      <br>\r\n      <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\">Run Query</Button>\r\n\r\n      <p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p>Start date (per week)</p>\r\n      <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n      <br>\r\n      \r\n      <Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n      \r\n      <p class=\"text-center\"><b>Time Distribution of sales at {{barName}} per week</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData5\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -679,6 +684,30 @@ var BarComponent = /** @class */ (function () {
                         ticks: {
                             stepSize: 50,
                             beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    }]
+            }
+        };
+        this.chartOptions2 = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 500,
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
                         }
                     }]
             }
@@ -859,7 +888,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p-table [value] = \"beerList\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n  <ng-template pTemplate=\"header\">\r\n      <tr>\r\n          <th *ngFor=\"let col of columns\">\r\n            {{col.header}}\r\n          </th>\r\n      </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-beer>\r\n      <tr style=\"height:30px\" class='clickable-row' [routerLink] = \"['/beers/',beer.name]\">\r\n          <td *ngFor='let col of columns'>\r\n            {{beer[col.field]}}\r\n          </td>\r\n      </tr>\r\n  </ng-template>\r\n</p-table>\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n<p-table [value] = \"beerList\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n  <ng-template pTemplate=\"header\">\r\n      <tr>\r\n          <th *ngFor=\"let col of columns\">\r\n            {{col.header}}\r\n          </th>\r\n      </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-beer>\r\n      <tr style=\"height:30px\" class='clickable-row' [routerLink] = \"['/beers/',beer.name]\">\r\n          <td *ngFor='let col of columns'>\r\n            {{beer[col.field]}}\r\n          </td>\r\n      </tr>\r\n  </ng-template>\r\n</p-table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -933,7 +962,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"text-center\">{{beerName}}</h1>\r\n<p class=\"text-center\"><b>Top 5 Bars where this beer sells the most</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData1\"></p-chart>\r\n<p class=\"text-center\"><b>Top 5 Consumers of this beer</b></p>\r\n<p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n<p>Start date (per day)</p>\r\n<p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<p>End date (per day)</p>\r\n<p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n<br>\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of when this beer sells the most</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData3\"></p-chart>\r\n\r\n<br>\r\n{{begin}}\r\n\r\n<br>\r\n{{end}}\r\n\r\n<p>Start date (per week)</p>\r\n<p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n<br>\r\n\r\n<Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n\r\n<p class=\"text-center\"><b>Time Distribution of when this beer sells the most per week</b></p>\r\n<p-chart type=\"line\" [data]=\"chartData4\"></p-chart>\r\n\r\n<br>\r\n{{beginWeek}}\r\n\r\n"
+module.exports = "<h1 class=\"text-center\">{{beerName}}</h1>\r\n<div class=\"row\">\r\n    <div class=\"col-6\">\r\n        <p class=\"text-center\"><b>Top 5 Bars where this beer sells the most</b></p>\r\n        <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n    </div>\r\n    <div class=\"col-6\">\r\n        <p class=\"text-center\"><b>Top 5 Consumers of this beer</b></p>\r\n        <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions2\"></p-chart>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n        <div class=\"col-6\">\r\n                <p>Start date (per day)</p>\r\n                <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n                <br>\r\n                \r\n                <p>End date (per day)</p>\r\n                <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n                \r\n                <br>\r\n                <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n                \r\n                <p class=\"text-center\"><b>Time Distribution of when this beer sells the most</b></p>\r\n                <p-chart type=\"line\" [data]=\"chartData3\" [options]=\"chartOptions3\"></p-chart>\r\n                \r\n        </div>\r\n        <div class=\"col-6\">\r\n                <p>Start date (per week)</p>\r\n                <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n                <br>\r\n                \r\n                <Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n                \r\n                <p class=\"text-center\"><b>Time Distribution of when this beer sells the most per week</b></p>\r\n                <p-chart type=\"line\" [data]=\"chartData4\" [options]=\"chartOptions\"></p-chart>\r\n                \r\n        </div>\r\n    </div>\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -980,8 +1009,66 @@ var BeerComponent = /** @class */ (function () {
             scales: {
                 yAxes: [{
                         ticks: {
-                            stepSize: 5,
+                            stepSize: 100,
                             beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    }]
+            }
+        };
+        this.chartOptions2 = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 25,
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    }]
+            }
+        };
+        this.chartOptions3 = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 100,
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    }]
+            }
+        };
+        this.chartOptions4 = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 25,
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
                         }
                     }]
             }
@@ -1322,7 +1409,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n\r\n    <p>Start date</p>\r\n    <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n    <br>\r\n    \r\n    <p>End date</p>\r\n    <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n    <br>\r\n    <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n\r\n    <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most</h3>\r\n    <p-chart type=\"bar\" [data]=\"chartData2\"></p-chart>\r\n\r\n    <br>\r\n    {{begin}}\r\n\r\n    <br>\r\n    {{end}}\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <p>Start date (per day) </p>\r\n            <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            \r\n            <p>End date</p>\r\n            <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n            \r\n            <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most per day</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <p>Start date (per week) </p>\r\n            <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph2()\" >Run Query</Button>\r\n            <h3 class=\"text-center\" >Top 5 Bars at which {{selectedDrinker}} spent the most per week</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <p>Start date (per month) </p>\r\n            <p-chart type=\"bar\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1362,12 +1449,37 @@ var DrinkerGraphComponent = /** @class */ (function () {
         this.maxDate = new Date('2019-03-19');
         this.begin = new Date('2018-01-01');
         this.end = new Date('2018-04-02');
+        this.beginWeek = new Date(2018, 0, 1);
         this.chartOptions = {
             scales: {
                 yAxes: [{
                         ticks: {
-                            stepSize: 5,
+                            stepSize: 50,
                             beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
+                        }
+                    }]
+            }
+        };
+        this.chartOptions2 = {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            stepSize: 500,
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 45,
+                            minRotation: 0
                         }
                     }]
             }
@@ -1391,7 +1503,88 @@ var DrinkerGraphComponent = /** @class */ (function () {
                 labels: labels0,
                 datasets: [
                     {
-                        label: 'Top 5 bars where ' + _this.selectedDrinker + ' spends the most',
+                        label: 'Top 5 bars where ' + _this.selectedDrinker + ' spends the most per day',
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+    };
+    DrinkerGraphComponent.prototype.updateGraph2 = function () {
+        var _this = this;
+        var beginString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(this.beginWeek).format('YYYY-MM-DD');
+        var endString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(beginString, 'YYYY-MM-DD').add(7, 'days').format('YYYY-MM-DD');
+        console.log(endString);
+        var obs3 = this.dataService.getDrinkerSpendingPerWeek(this.selectedDrinker, beginString, endString);
+        obs3.subscribe(function (data) {
+            _this.chartData3 = data;
+            var labels0 = [];
+            var curr = beginString;
+            var j = 0;
+            for (j = 0; j < 7; j++) {
+                labels0.push(curr);
+                curr = moment_moment__WEBPACK_IMPORTED_MODULE_3__(curr, 'YYYY-MM-DD').add(1, 'days').format('YYYY-MM-DD');
+            }
+            console.log(curr);
+            console.log(data);
+            var dataset0 = [];
+            var i = 0;
+            var currDataIndex = 0;
+            for (i = 0; i < labels0.length; i++) {
+                if (data[currDataIndex][0] === labels0[i]) {
+                    dataset0.push(data[currDataIndex][1]);
+                    currDataIndex++;
+                }
+                else {
+                    dataset0.push(0);
+                }
+            }
+            console.log(labels0);
+            console.log(dataset0);
+            _this.chartData3 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 bars where ' + _this.selectedDrinker + ' spends the most per week',
+                        backgroundColor: '#42A5F5',
+                        borderColor: '#1E88E5',
+                        data: dataset0
+                    }
+                ]
+            };
+        });
+    };
+    DrinkerGraphComponent.prototype.updateGraph3 = function () {
+        var _this = this;
+        var beginString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(this.beginWeek).format('YYYY-MM-DD');
+        var endString = moment_moment__WEBPACK_IMPORTED_MODULE_3__(beginString, 'YYYY-MM-DD').add(7, 'days').format('YYYY-MM-DD');
+        console.log(endString);
+        var obs4 = this.dataService.getDrinkerSpendingPerMonth(this.selectedDrinker);
+        obs4.subscribe(function (data) {
+            _this.chartData4 = data;
+            var labels0 = ['January',
+                'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var dataset0 = [];
+            var i = 0;
+            var currDataIndex = 0;
+            for (i = 1; i < 13; i++) {
+                if (data[currDataIndex][0] === i) {
+                    dataset0.push(data[currDataIndex][1]);
+                    currDataIndex++;
+                }
+                else {
+                    dataset0.push(0);
+                }
+            }
+            console.log(labels0);
+            console.log(dataset0);
+            _this.chartData4 = {
+                labels: labels0,
+                datasets: [
+                    {
+                        label: 'Top 5 bars where ' + _this.selectedDrinker + ' spends the most per week',
                         backgroundColor: '#42A5F5',
                         borderColor: '#1E88E5',
                         data: dataset0
@@ -1430,6 +1623,8 @@ var DrinkerGraphComponent = /** @class */ (function () {
             };
         });
         this.updateGraph();
+        this.updateGraph2();
+        this.updateGraph3();
     };
     DrinkerGraphComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1514,7 +1709,7 @@ var LandingComponent = /** @class */ (function () {
 /*!******************************************!*\
   !*** ./src/app/services/data.service.ts ***!
   \******************************************/
-/*! exports provided: BarAndTotalSpent, DrinkerAndTotalSpent, TimeDistObject, BarBundle, DrinkerBundle, BeerBundle, TransactionBundle, DataService */
+/*! exports provided: BarAndTotalSpent, DrinkerAndTotalSpent, TimeDistObject, BarBundle, DrinkerBundle, BeerBundle, TransactionBundle, SpendingWeek, DataService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1526,6 +1721,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkerBundle", function() { return DrinkerBundle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BeerBundle", function() { return BeerBundle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionBundle", function() { return TransactionBundle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpendingWeek", function() { return SpendingWeek; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _config_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/settings */ "./src/app/config/settings.ts");
@@ -1616,11 +1812,24 @@ var TransactionBundle = /** @class */ (function () {
     return TransactionBundle;
 }());
 
+var SpendingWeek = /** @class */ (function () {
+    function SpendingWeek(dateVal, amountVal) {
+        this.dateVal = dateVal;
+        this.amountVal = amountVal;
+        this.date = dateVal;
+        this.amount = amountVal;
+    }
+    return SpendingWeek;
+}());
+
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.base = _config_settings__WEBPACK_IMPORTED_MODULE_1__["Settings"].baseUrl;
     }
+    DataService.prototype.getSummaryData = function (type) {
+        return this.http.get(this.base + type + '/summary');
+    };
     DataService.prototype.getDrinkers = function () {
         return this.http.get(this.base + 'drinkers/all');
     };
@@ -1712,6 +1921,27 @@ var DataService = /** @class */ (function () {
         var options = { params: parameters };
         return this.http.get(this.base + 'bars/timedistsalesperweek', options);
     };
+    DataService.prototype.getResultFromQuery = function (query) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('query', query);
+        var options = { params: parameters };
+        var queryDict = { 'query': query };
+        return this.http.post(this.base + 'sql/object/run', {}, options);
+    };
+    DataService.prototype.getDrinkerSpendingPerWeek = function (drinker, beginDate, endDate) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('drinker', drinker)
+            .set('beginDate', beginDate)
+            .set('endDate', endDate);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'drinkers/spendingperweek', options);
+    };
+    DataService.prototype.getDrinkerSpendingPerMonth = function (drinker) {
+        var parameters = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]()
+            .set('drinker', drinker);
+        var options = { params: parameters };
+        return this.http.get(this.base + 'drinkers/spendingpermonth', options);
+    };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -1732,7 +1962,7 @@ var DataService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wideInput {\r\n    text-align: left;\r\n    padding-left:0;\r\n    padding-top:0;\r\n    padding-bottom:0.4em;\r\n    padding-right: 0.4em;\r\n    width: 765px;\r\n    height: 500px;\r\n    border:outset 4px orange;\r\n}\r\n.outputStatus{\r\n    text-align: left;\r\n    width: 765px;\r\n    border:outset 4px orange;\r\n}\r\n.outputResults{\r\n    text-align: left;\r\n    padding-left:0;\r\n    padding-top:0;\r\n    padding-bottom:0.4em;\r\n    padding-right: 0.4em;\r\n    width: 765px;\r\n    height: 661.8px;\r\n    border:outset 4px orange;\r\n}\r\n.runButton{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 30px;\r\n}\r\n.padding-0{\r\n    padding-right:0;\r\n    padding-left:0;\r\n}"
+module.exports = ".wideInput {\r\n    text-align: left;\r\n    padding-left:0;\r\n    padding-top:0;\r\n    padding-bottom:0.4em;\r\n    padding-right: 0.4em;\r\n    width: 100%;\r\n    height: 500px;\r\n    border:outset 4px orange;\r\n}\r\n.outputStatus{\r\n    text-align: left;\r\n    width: 100%;\r\n    border:outset 4px orange;\r\n}\r\n.runButton{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 30px;\r\n}\r\n.padding-0{\r\n    padding-right:0;\r\n    padding-left:0;\r\n}"
 
 /***/ }),
 
@@ -1743,7 +1973,7 @@ module.exports = ".wideInput {\r\n    text-align: left;\r\n    padding-left:0;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col padding-0\">\r\n      <textarea class=\"wideInput\"></textarea> \r\n      <textarea readonly class=\"outputStatus\"></textarea> \r\n      <p-button class=\"runButton\" label=\"Run\" styleClass=\"ui-button-success\"></p-button>\r\n    </div>\r\n    <div class=\"col padding-0\">\r\n      <textarea class=\"outputResults\"></textarea> \r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <textarea class=\"wideInput\" [(ngModel)] = \"sqlQuery\"></textarea> \r\n      <textarea readonly class=\"outputStatus\" [(ngModel)] = \"errorMessage\"></textarea> \r\n      <p-button class=\"runButton\" label=\"Run\" styleClass=\"ui-button-success\" (click) = \"runClicked()\"></p-button>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <p-table [value] = \"rows\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n        <ng-template pTemplate=\"header\">\r\n            <tr>\r\n                <th *ngFor=\"let col of columns\"> <!-- specifying the width of columns -->\r\n                  {{col.header}}\r\n                </th>\r\n            </tr>\r\n        </ng-template>\r\n        <ng-template pTemplate=\"body\" let-row>\r\n            <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n                <td *ngFor='let col of columns'>\r\n                  {{row[col.field]}}\r\n                </td>\r\n            </tr>\r\n        </ng-template>\r\n      </p-table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1758,6 +1988,7 @@ module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n  
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SQLQueryComponent", function() { return SQLQueryComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/data.service */ "./src/app/services/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1768,9 +1999,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SQLQueryComponent = /** @class */ (function () {
-    function SQLQueryComponent() {
+    function SQLQueryComponent(dataService) {
+        this.dataService = dataService;
     }
+    SQLQueryComponent.prototype.runClicked = function () {
+        var _this = this;
+        var obs = this.dataService.getResultFromQuery(this.sqlQuery);
+        obs.subscribe(function (data) {
+            if (data['error'] == null) {
+                _this.rows = data['rows'];
+                _this.columns = data['colNames'].map(function (colName) {
+                    return { header: colName, field: colName };
+                });
+            }
+            else {
+                _this.errorMessage = data['error'];
+            }
+            console.log(_this.rows);
+        });
+    };
     SQLQueryComponent.prototype.ngOnInit = function () {
     };
     SQLQueryComponent = __decorate([
@@ -1779,7 +2028,7 @@ var SQLQueryComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./sqlquery.component.html */ "./src/app/sqlquery/sqlquery.component.html"),
             styles: [__webpack_require__(/*! ./sqlquery.component.css */ "./src/app/sqlquery/sqlquery.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
     ], SQLQueryComponent);
     return SQLQueryComponent;
 }());

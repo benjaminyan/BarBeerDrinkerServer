@@ -55,8 +55,8 @@ order by numSold desc;
     // Don't leave out transaction! If we do, we'll get an error saying
     // could not resolve property: name of: com.ericandben.cs336.backendapp.includes.Includes
     @Query(value = "SELECT i.item.name, sum(i.quantity)" +
-    " FROM Includes i WHERE i.transaction.bar.name = :barName" +  
-    " AND i.item.itemType = 'B'" + 
+    " FROM Includes i JOIN i.transaction.bar.itemsSold s WHERE i.transaction.bar.name = :barName" +  
+    " AND i.item.itemType = 'B' AND i.item.name = s.item.name" + 
     " GROUP by i.item.name ORDER BY sum(i.quantity) DESC"
     )
     public Page<List<Object[]>> mostPopularBeersPerBar(Pageable pageable, String barName);

@@ -627,7 +627,7 @@ var BarListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#add:hover {\r\n    opacity: 0.8\r\n}"
+module.exports = "#add:hover {\r\n    opacity: 0.8\r\n}\r\n.leftshift {\r\n    position: relative;\r\n    left: -40px;\r\n}"
 
 /***/ }),
 
@@ -638,7 +638,7 @@ module.exports = "#add:hover {\r\n    opacity: 0.8\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData1\" [options] = \"chartOptions\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <p>Start date</p>\r\n      <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n      <br>\r\n\r\n      <p>End date</p>\r\n      <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n      <br>\r\n      <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\">Run Query</Button>\r\n\r\n      <p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p>Start date (per week)</p>\r\n      <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n      <br>\r\n      \r\n      <Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n      \r\n      <p class=\"text-center\"><b>Time Distribution of sales at {{barName}} per week</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData5\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col\" style=\"padding: 50px; background-color: #BCC6CC;\">\r\n        <h1 class=\"text-center\">{{barName}}</h1>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Drinkers who are the Largest Spenders</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData1\" [options] = \"chartOptions\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Beers which are Most Popular</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p class=\"text-center\"><b>Top 5 Manufacturers who sell the Most Beers</b></p>\r\n      <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions2\"></p-chart>\r\n  </div>\r\n  <div class=\"col-6\">\r\n      <div class=\"text-right leftshift\">\r\n        <p>Start date</p>\r\n        <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n        <br>\r\n\r\n        <p>End date</p>\r\n        <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n\r\n        <br>\r\n        <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\">Run Query</Button>\r\n      </div>\r\n\r\n      <p class=\"text-center\"><b>Time Distribution of Sales on Average</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-6\">\r\n      <p>Start date (per week)</p>\r\n      <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n      <br>\r\n      \r\n      <Button class=\"btn\" type=\"submit\" (click) = \"updateGraphWeek()\">Run Query</Button>\r\n      \r\n      <p class=\"text-center\"><b>Time Distribution of sales at {{barName}} per week</b></p>\r\n      <p-chart type=\"line\" [data]=\"chartData5\" [options]=\"chartOptions\"></p-chart>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -1318,7 +1318,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <p-table [value] = \"transactionArr\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n      <ng-template pTemplate=\"header\">\r\n          <tr>\r\n              <th *ngFor=\"let col of columns\" [style.width.%]=\"col.width\"> <!-- specifying the width of columns -->\r\n                {{col.header}}\r\n              </th>\r\n          </tr>\r\n      </ng-template>\r\n      <ng-template pTemplate=\"body\" let-drinker>\r\n          <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n              <td *ngFor='let col of columns'>\r\n                {{drinker[col.field]}}\r\n              </td>\r\n          </tr>\r\n      </ng-template>\r\n    </p-table>\r\n  </div>\r\n"
+module.exports = "<div class=\"container-fluid\">\r\n    <h2 class=\"text-center\">Transactions for {{drinkerName}}</h2>\r\n    <p-table [value] = \"transactionArr\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n      <ng-template pTemplate=\"header\">\r\n          <tr>\r\n              <th *ngFor=\"let col of columns\" [style.width.%]=\"col.width\"> <!-- specifying the width of columns -->\r\n                {{col.header}}\r\n              </th>\r\n          </tr>\r\n      </ng-template>\r\n      <ng-template pTemplate=\"body\" let-drinker>\r\n          <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n              <td *ngFor='let col of columns'>\r\n                {{drinker[col.field]}}\r\n              </td>\r\n          </tr>\r\n      </ng-template>\r\n    </p-table>\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1363,7 +1363,10 @@ var DrinkerComponent = /** @class */ (function () {
             { header: 'Date', field: 'dateTime', width: '13' },
             { header: 'Tip', field: 'tip', width: '10' }
         ];
-        this.dataObs = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (params) { return _this.dataService.getTransactionsForDrinker(params.get('name')); }));
+        this.dataObs = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (params) {
+            _this.drinkerName = params.get('name');
+            return _this.dataService.getTransactionsForDrinker(params.get('name'));
+        }));
         this.dataObs.subscribe(function (data) {
             var i = 0;
             var j = 0;
@@ -1398,7 +1401,7 @@ var DrinkerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".leftshift {\r\n    position: relative;\r\n    left: -80px;\r\n}"
 
 /***/ }),
 
@@ -1409,7 +1412,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <p>Start date (per day) </p>\r\n            <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            \r\n            <p>End date</p>\r\n            <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n            \r\n            <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most per day</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <p>Start date (per week) </p>\r\n            <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph2()\" >Run Query</Button>\r\n            <h3 class=\"text-center\" >Top 5 Bars at which {{selectedDrinker}} spent the most per week</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <p>Start date (per month) </p>\r\n            <p-chart type=\"bar\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <h3 class=\"text-center\" >Top 5 Beers for {{selectedDrinker}}</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData1\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <div class = \"container\">\r\n                <div class = \"row\">\r\n                    <div class=\"col\">\r\n                        <span>Start date (per day) </span>\r\n                        <br>\r\n                        <p-calendar [(ngModel)]=\"begin\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n                    </div>\r\n                    <div class = \"col\">\r\n                        <span>End date</span>\r\n                        <br>\r\n                        <p-calendar [(ngModel)]=\"end\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n                    </div>\r\n                </div>\r\n                <div class = \"row\">\r\n                    <div class = \"col\"></div>\r\n                    <div class = \"col\">\r\n                        <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph()\" >Run Query</Button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <h3 class=\"text-center\">Top 5 Bars at which {{selectedDrinker}} spent the most per day</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData2\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-6\">\r\n            <p>Start date (per week) </p>\r\n            <p-calendar [(ngModel)]=\"beginWeek\" [showIcon]=\"true\" dateFormat=\"yy-mm-dd\" [minDate] = \"minDate\" [maxDate] = \"maxDate\"></p-calendar>\r\n            <br>\r\n            <Button class=\"btn\" type=\"submit\" (click) = \"updateGraph2()\" >Run Query</Button>\r\n            <h3 class=\"text-center\" >Top 5 Bars at which {{selectedDrinker}} spent the most per week</h3>\r\n            <p-chart type=\"bar\" [data]=\"chartData3\" [options]=\"chartOptions\"></p-chart>\r\n        </div>\r\n        <div class=\"col-6\">\r\n            <p>Start date (per month) </p>\r\n            <p-chart type=\"bar\" [data]=\"chartData4\" [options]=\"chartOptions2\"></p-chart>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1973,7 +1976,7 @@ module.exports = ".wideInput {\r\n    text-align: left;\r\n    padding-left:0;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <textarea class=\"wideInput\" [(ngModel)] = \"sqlQuery\"></textarea> \r\n      <textarea readonly class=\"outputStatus\" [(ngModel)] = \"errorMessage\"></textarea> \r\n      <p-button class=\"runButton\" label=\"Run\" styleClass=\"ui-button-success\" (click) = \"runClicked()\"></p-button>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <p-table [value] = \"rows\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n        <ng-template pTemplate=\"header\">\r\n            <tr>\r\n                <th *ngFor=\"let col of columns\"> <!-- specifying the width of columns -->\r\n                  {{col.header}}\r\n                </th>\r\n            </tr>\r\n        </ng-template>\r\n        <ng-template pTemplate=\"body\" let-row>\r\n            <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n                <td *ngFor='let col of columns'>\r\n                  {{row[col.field]}}\r\n                </td>\r\n            </tr>\r\n        </ng-template>\r\n      </p-table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <textarea class=\"wideInput\" [(ngModel)] = \"sqlQuery\"></textarea> \r\n      <textarea readonly class=\"outputStatus\" [(ngModel)] = \"message\"></textarea>\r\n      <div style=\"text-align: center;\">\r\n        <p-button class=\"btn\" label=\"Run\" (click) = \"runClicked()\"></p-button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-12\">\r\n      <p-table [value] = \"rows\"  [paginator]=\"true\" [rows]=\"18\" [rowHover]=\"true\">\r\n        <ng-template pTemplate=\"header\">\r\n            <tr>\r\n                <th *ngFor=\"let col of columns\"> <!-- specifying the width of columns -->\r\n                  {{col.header}}\r\n                </th>\r\n            </tr>\r\n        </ng-template>\r\n        <ng-template pTemplate=\"body\" let-row>\r\n            <tr style=\"height:30px\"> <!-- [routerLink] = \"['/drinkers/',drinker.name]\"> -->\r\n                <td *ngFor='let col of columns'>\r\n                  {{row[col.field]}}\r\n                </td>\r\n            </tr>\r\n        </ng-template>\r\n      </p-table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2008,14 +2011,17 @@ var SQLQueryComponent = /** @class */ (function () {
         var _this = this;
         var obs = this.dataService.getResultFromQuery(this.sqlQuery);
         obs.subscribe(function (data) {
-            if (data['error'] == null) {
+            if (data['error'] !== null) {
+                _this.message = data['error'];
+            }
+            else if (data['result'] !== null && data['result'] !== '-1 rows affected.') {
+                _this.message = data['result'];
+            }
+            else {
                 _this.rows = data['rows'];
                 _this.columns = data['colNames'].map(function (colName) {
                     return { header: colName, field: colName };
                 });
-            }
-            else {
-                _this.errorMessage = data['error'];
             }
             console.log(_this.rows);
         });
